@@ -103,7 +103,7 @@ export const translations = {
     about_desc2: "We are a tight-knit team of strategists, designers, and producers who believe in the power of bold ideas and meticulous execution.",
     about_team_title: "The people behind M Studios",
 
-    team_ceo: "CEO & Founder",
+    team_ceo: "CEO",
     team_cmo: "Chief Marketing Officer",
     team_cto: "Chief Technology Officer",
     team_gd: "Graphic Design Lead",
@@ -283,7 +283,7 @@ export const translations = {
     about_desc2: "Nous sommes une équipe soudée de stratèges, designers et producteurs qui croient au pouvoir des idées audacieuses et de l'exécution minutieuse.",
     about_team_title: "Les personnes derrière M Studios",
 
-    team_ceo: "PDG & Fondateur",
+    team_ceo: "CEO",
     team_cmo: "Directeur Marketing",
     team_cto: "Directeur Technique",
     team_gd: "Lead Design Graphique",
@@ -463,7 +463,7 @@ export const translations = {
     about_desc2: "نحن فريق متماسك من الاستراتيجيين والمصممين والمنتجين نؤمن بقوة الأفكار الجريئة والتنفيذ الدقيق.",
     about_team_title: "الأشخاص وراء ماجور ستوديوز",
 
-    team_ceo: "المدير التنفيذي والمؤسس",
+    team_ceo: "المدير التنفيذي",
     team_cmo: "مدير التسويق",
     team_cto: "المدير التقني",
     team_gd: "مسؤول التصميم",
