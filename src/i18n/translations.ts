@@ -37,7 +37,7 @@ export const translations = {
 
     // Work - Identity Slider
     work_id_subtitle: "Full Brand Identity",
-    work_id_title: "Ignite Algiers",
+    work_id_title: "MAJOR",
     work_id_desc: "Visual identity, logo system, and brand guidelines for the city's premier tech and business event.",
     work_id_pages: "21 Pages · Auto-browsing",
 
@@ -194,7 +194,7 @@ export const translations = {
 
     // Work - Identity Slider
     work_id_subtitle: "Identité de Marque Complète",
-    work_id_title: "Ignite Algiers",
+    work_id_title: "MAJOR",
     work_id_desc: "Identité visuelle, création de logo et charte graphique pour le principal événement tech et business de la ville.",
     work_id_pages: "21 Pages · Navigation auto",
 
