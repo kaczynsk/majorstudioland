@@ -1,15 +1,19 @@
 import { useState } from 'react';
 
-const budgets = ['< $5K', '$5K–$15K', '$15K–$40K', '$40K–$100K', '$100K+'];
-const services = ['Brand Identity', 'Web Design & Dev', 'Product Design', 'Digital Strategy', 'Motion & Animation', 'E-commerce', 'Other'];
+const budgets = ['< 50k DZD', '50k–200k DZD', '200k–500k DZD', '500k–1M DZD', '1M+ DZD', 'Not sure'];
+const services = ['Video production', 'Photography', 'Branding', 'Graphic design', 'Event covering', 'Web development', 'Product design', 'Digital Strategy', 'Other'];
 
 export default function Contact() {
   const [selected, setSelected] = useState<string[]>([]);
-  const [budget, setBudget] = useState('');
+  const [selectedBudgets, setSelectedBudgets] = useState<string[]>([]);
   const [sent, setSent] = useState(false);
 
   const toggleService = (s: string) => {
     setSelected(prev => prev.includes(s) ? prev.filter(x => x !== s) : [...prev, s]);
+  };
+
+  const toggleBudget = (b: string) => {
+    setSelectedBudgets(prev => prev.includes(b) ? prev.filter(x => x !== b) : [...prev, b]);
   };
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -118,28 +122,53 @@ export default function Contact() {
                 <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.72rem', color: 'rgba(255,255,255,0.25)', letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: '1rem' }}>Follow the Studio</p>
                 <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
                   {[
-                    { name: 'Instagram', href: 'https://www.instagram.com/studios.major/' },
-                    { name: 'Facebook', href: 'https://web.facebook.com/studios.major/' },
+                    { 
+                      name: 'Instagram', 
+                      href: 'https://www.instagram.com/studios.major/',
+                      icon: (
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg>
+                      )
+                    },
+                    { 
+                      name: 'Facebook', 
+                      href: 'https://web.facebook.com/studios.major/',
+                      icon: (
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                        </svg>
+                      )
+                    },
                   ].map((s, i) => (
                     <a key={i} href={s.href} target="_blank" rel="noopener noreferrer" style={{
                       fontFamily: "'Inter', sans-serif",
                       fontSize: '0.78rem',
                       color: 'rgba(255,255,255,0.5)',
                       textDecoration: 'none',
-                      padding: '0.4rem 0.9rem',
+                      padding: '0.5rem 1rem',
                       border: '1px solid rgba(77, 54, 139, 0.25)',
-                      borderRadius: '8px',
+                      borderRadius: '10px',
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '0.5rem',
                       transition: 'all 0.2s ease',
+                      background: 'rgba(34, 34, 42, 0.4)',
                     }}
                     onMouseEnter={e => {
-                      (e.target as HTMLElement).style.color = 'white';
-                      (e.target as HTMLElement).style.borderColor = 'rgba(77, 54, 139, 0.6)';
+                      (e.currentTarget as HTMLElement).style.color = 'white';
+                      (e.currentTarget as HTMLElement).style.borderColor = 'rgba(77, 54, 139, 0.6)';
+                      (e.currentTarget as HTMLElement).style.background = 'rgba(77, 54, 139, 0.15)';
                     }}
                     onMouseLeave={e => {
-                      (e.target as HTMLElement).style.color = 'rgba(255,255,255,0.5)';
-                      (e.target as HTMLElement).style.borderColor = 'rgba(77, 54, 139, 0.25)';
+                      (e.currentTarget as HTMLElement).style.color = 'rgba(255,255,255,0.5)';
+                      (e.currentTarget as HTMLElement).style.borderColor = 'rgba(77, 54, 139, 0.25)';
+                      (e.currentTarget as HTMLElement).style.background = 'rgba(34, 34, 42, 0.4)';
                     }}
                     >
+                      {s.icon}
                       {s.name}
                     </a>
                   ))}
@@ -154,21 +183,21 @@ export default function Contact() {
                   <label style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.72rem', color: 'rgba(255,255,255,0.35)', letterSpacing: '0.1em', textTransform: 'uppercase', display: 'block', marginBottom: '0.5rem' }}>
                     Your Name *
                   </label>
-                  <input className="form-input" type="text" placeholder="Alex Johnson" required />
+                  <input className="form-input" type="text" placeholder="Your Name" required />
                 </div>
                 <div>
                   <label style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.72rem', color: 'rgba(255,255,255,0.35)', letterSpacing: '0.1em', textTransform: 'uppercase', display: 'block', marginBottom: '0.5rem' }}>
                     Company
                   </label>
-                  <input className="form-input" type="text" placeholder="Your Company" />
+                  <input className="form-input" type="text" placeholder="Your Company Name" />
                 </div>
               </div>
 
               <div style={{ marginBottom: '1rem' }}>
                 <label style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.72rem', color: 'rgba(255,255,255,0.35)', letterSpacing: '0.1em', textTransform: 'uppercase', display: 'block', marginBottom: '0.5rem' }}>
-                  Email *
+                  Phone Number *
                 </label>
-                <input className="form-input" type="email" placeholder="alex@company.com" required />
+                <input className="form-input" type="tel" placeholder="05XX XX XX XX" required />
               </div>
 
               {/* Services */}
@@ -210,15 +239,15 @@ export default function Contact() {
                     <button
                       key={i}
                       type="button"
-                      onClick={() => setBudget(b)}
+                      onClick={() => toggleBudget(b)}
                       style={{
                         fontFamily: "'Inter', sans-serif",
                         fontSize: '0.75rem',
                         padding: '0.4rem 0.9rem',
                         borderRadius: '8px',
-                        border: budget === b ? '1px solid #fbaf17' : '1px solid rgba(77, 54, 139, 0.25)',
-                        background: budget === b ? 'rgba(251, 175, 23, 0.12)' : 'rgba(34, 34, 42, 0.8)',
-                        color: budget === b ? '#fbaf17' : 'rgba(255,255,255,0.45)',
+                        border: selectedBudgets.includes(b) ? '1px solid #fbaf17' : '1px solid rgba(77, 54, 139, 0.25)',
+                        background: selectedBudgets.includes(b) ? 'rgba(251, 175, 23, 0.12)' : 'rgba(34, 34, 42, 0.8)',
+                        color: selectedBudgets.includes(b) ? '#fbaf17' : 'rgba(255,255,255,0.45)',
                         cursor: 'pointer',
                         transition: 'all 0.2s ease',
                       }}
