@@ -383,8 +383,8 @@ export default function Work() {
             gap: '0.5rem', marginBottom: '1rem',
           }}>
             {[
-              { src: '/work/graphic-design/Printables Designs1.png', alt: 'Ignite Algiers badge design' },
-              { src: '/work/graphic-design/Printables Designs2.png', alt: 'Ignite Algiers roll-up banners' },
+              { src: '/work/graphic-design/Printables Designs1.png', alt: 'MAJOR badge design' },
+              { src: '/work/graphic-design/Printables Designs2.png', alt: 'MAJOR roll-up banners' },
             ].map((img, i) => (
               <div key={i} style={{
                 borderRadius: '10px', overflow: 'hidden',
