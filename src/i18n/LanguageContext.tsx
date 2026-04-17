@@ -17,10 +17,19 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }
   const [language, setLanguage] = useState<Language>('fr');
 
   useEffect(() => {
-    // Check local storage for saved language, otherwise default to "fr"
     const savedLang = localStorage.getItem('language') as Language | null;
+    
     if (savedLang && ['en', 'fr', 'ar'].includes(savedLang)) {
       setLanguage(savedLang);
+    } else {
+      // Feature: Adapt automatically to user's browser language if not set
+      // e.g. "fr-DZ" -> "fr", "ar-SA" -> "ar"
+      const browserLang = typeof window !== 'undefined' ? window.navigator.language.substring(0, 2) : 'fr';
+      if (['en', 'fr', 'ar'].includes(browserLang)) {
+        setLanguage(browserLang as Language);
+      } else {
+        setLanguage('fr');
+      }
     }
   }, []);
 
