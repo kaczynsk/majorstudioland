@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const budgets = ['< 50k DZD', '50k–200k DZD', '200k–500k DZD', '500k–1M DZD', '1M+ DZD', 'Not sure'];
+const budgets = ['< 20k DZD', '50k–200k DZD', '200k–500k DZD', '500k–1M DZD', '1M+ DZD', 'Not sure'];
 const services = ['Video production', 'Photography', 'Branding', 'Graphic design', 'Event covering', 'Web development', 'Product design', 'Digital Strategy', 'Other'];
 
 export default function Contact() {
