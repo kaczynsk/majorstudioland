@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import Logo from './Logo';
 
 const navItems = [
   { label: 'Work', href: '#work' },
@@ -55,25 +56,7 @@ export default function Navbar() {
           style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '0.6rem' }}
         >
           {/* Logo mark */}
-          <div style={{
-            width: '36px',
-            height: '36px',
-            background: 'linear-gradient(135deg, #4d368b 0%, #5a5da8 100%)',
-            borderRadius: '10px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            boxShadow: '0 0 20px rgba(77, 54, 139, 0.4)',
-            flexShrink: 0,
-          }}>
-            <span style={{
-              fontFamily: "'Readex Pro', sans-serif",
-              fontWeight: 700,
-              fontSize: '1.1rem',
-              color: 'white',
-              letterSpacing: '-0.05em',
-            }}>M</span>
-          </div>
+          <Logo size={36} style={{ boxShadow: '0 0 20px rgba(77, 54, 139, 0.4)', borderRadius: '10px' }} />
           <div style={{ display: 'flex', flexDirection: 'column', lineHeight: 1 }}>
             <span style={{
               fontFamily: "'Readex Pro', sans-serif",

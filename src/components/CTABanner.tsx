@@ -73,11 +73,11 @@ export default function CTABanner() {
             Start a Project →
           </a>
           <a
-            href="mailto:hello@majorstudios.co"
+            href="mailto:major.algerie@gmail.com"
             className="btn-outline"
             style={{ textDecoration: 'none' }}
           >
-            hello@majorstudios.co
+            major.algerie@gmail.com
           </a>
         </div>
 

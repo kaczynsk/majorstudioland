@@ -1,3 +1,5 @@
+import Logo from './Logo';
+
 export default function Footer() {
   const year = new Date().getFullYear();
 
@@ -22,18 +24,7 @@ export default function Footer() {
           {/* Brand column */}
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', marginBottom: '1.25rem' }}>
-              <div style={{
-                width: '36px',
-                height: '36px',
-                background: 'linear-gradient(135deg, #4d368b 0%, #5a5da8 100%)',
-                borderRadius: '10px',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                boxShadow: '0 0 20px rgba(77, 54, 139, 0.3)',
-              }}>
-                <span style={{ fontFamily: "'Readex Pro', sans-serif", fontWeight: 700, fontSize: '1.1rem', color: 'white', letterSpacing: '-0.05em' }}>M</span>
-              </div>
+              <Logo size={36} style={{ boxShadow: '0 0 20px rgba(77, 54, 139, 0.3)', borderRadius: '10px' }} />
               <div style={{ lineHeight: 1 }}>
                 <span style={{ fontFamily: "'Readex Pro', sans-serif", fontWeight: 700, fontSize: '1rem', color: 'white', display: 'block' }}>Major Studios</span>
                 <span style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.55rem', color: 'rgba(255,255,255,0.3)', letterSpacing: '0.15em', textTransform: 'uppercase' }}>Digital Agency</span>
