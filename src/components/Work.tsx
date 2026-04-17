@@ -24,27 +24,46 @@ export default function Work() {
   const isPaused = useRef(false);
 
   useEffect(() => {
-    let timeout: any;
+    let timeout: ReturnType<typeof setTimeout>;
     const el = galleryRef.current;
     if (!el) return;
 
-    const tick = () => {
-      if (!isPaused.current && el && !isDragging.current) {
-        const maxScroll = el.scrollWidth - el.clientWidth;
-        if (el.scrollLeft >= maxScroll - 10) {
-          el.scrollTo({ left: 0, behavior: 'smooth' });
-        } else {
-          // Jump to next section with variable distance
-          const jump = Math.floor(Math.random() * 300) + 300;
-          el.scrollBy({ left: jump, behavior: 'smooth' });
-        }
+    // Pre-computed random visit order (shuffled 0..20 indices)
+    const makeOrder = () => {
+      const arr = Array.from({ length: 21 }, (_, i) => i);
+      for (let i = arr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]];
       }
-      // Next jump will take place in 2 to 4 seconds
-      timeout = setTimeout(tick, Math.floor(Math.random() * 2000) + 2000);
+      return arr;
     };
 
-    timeout = setTimeout(tick, 2000);
+    let visitOrder = makeOrder();
+    let step = 0;
 
+    const visitNext = () => {
+      if (isPaused.current || isDragging.current) {
+        timeout = setTimeout(visitNext, 800);
+        return;
+      }
+      if (step >= visitOrder.length) {
+        visitOrder = makeOrder();
+        step = 0;
+      }
+      const targetIndex = visitOrder[step++];
+      const cards = el.querySelectorAll('[data-gallery-card]');
+      const card = cards[targetIndex] as HTMLElement | undefined;
+      if (card) {
+        const cardLeft = card.offsetLeft;
+        const offset = cardLeft - (el.clientWidth / 2) + (card.offsetWidth / 2);
+        el.scrollTo({ left: Math.max(0, offset), behavior: 'smooth' });
+      }
+      // Wait 1.5 – 3.5 s before next jump
+      const delay = 1500 + Math.random() * 2000;
+      timeout = setTimeout(visitNext, delay);
+    };
+
+    timeout = setTimeout(visitNext, 1800);
     return () => clearTimeout(timeout);
   }, []);
 
@@ -178,6 +197,7 @@ export default function Work() {
                   cursor: 'pointer',
                   transition: 'transform 0.3s ease, border-color 0.3s ease',
                   position: 'relative',
+                  scrollSnapAlign: 'center',
                 }}
                 onMouseEnter={e => {
                   (e.currentTarget as HTMLElement).style.transform = 'scale(1.03)';
@@ -187,6 +207,7 @@ export default function Work() {
                   (e.currentTarget as HTMLElement).style.transform = 'scale(1)';
                   (e.currentTarget as HTMLElement).style.borderColor = 'rgba(77, 54, 139, 0.15)';
                 }}
+                data-gallery-card
               >
                 <img
                   src={page.src}
@@ -245,25 +266,27 @@ export default function Work() {
             background: 'rgba(245, 245, 247, 0.8)',
             border: '1px solid rgba(77, 54, 139, 0.1)',
           }}>
-            {/* Scrollable feed */}
+            {/* Scrollable feed — gentle oscillate, fixed height, no empty space */}
             <div style={{
               width: '100%', height: '100%',
               overflow: 'hidden', position: 'relative',
+              minHeight: '340px',
             }}>
               <div className="social-feed-scroll" style={{
                 display: 'flex', flexDirection: 'column', gap: '0',
+                willChange: 'transform',
               }}>
                 <img
                   src="/work/social-media/Split 1.png"
                   alt="Social media content feed part 1"
                   loading="lazy"
-                  style={{ width: '100%', display: 'block', objectFit: 'cover' }}
+                  style={{ width: '100%', display: 'block' }}
                 />
                 <img
                   src="/work/social-media/Split 2.png"
                   alt="Social media content feed part 2"
                   loading="lazy"
-                  style={{ width: '100%', display: 'block', objectFit: 'cover' }}
+                  style={{ width: '100%', display: 'block' }}
                 />
               </div>
             </div>
@@ -293,17 +316,17 @@ export default function Work() {
             </div>
           </div>
 
-        {/* ── B: Paid Advertising (Smaller Card) ── */}
+        {/* ── B: Paid Advertising (auto-height, no overflow:hidden) ── */}
         <div className="work-card" style={{
           gridColumn: '2 / 3',
           gridRow: '1 / 2',
-            borderRadius: '24px',
-            overflow: 'hidden',
-            position: 'relative',
-            background: 'rgba(245, 245, 247, 0.8)',
-            border: '1px solid rgba(77, 54, 139, 0.1)',
-            padding: '1.25rem',
-          }}>
+          borderRadius: '24px',
+          position: 'relative',
+          background: 'rgba(245, 245, 247, 0.8)',
+          border: '1px solid rgba(77, 54, 139, 0.1)',
+          padding: '1.25rem',
+          alignSelf: 'start',
+        }}>
           <div style={{
             display: 'grid', gridTemplateColumns: '1fr 1fr',
             gap: '0.5rem', marginBottom: '1rem',
@@ -345,17 +368,17 @@ export default function Work() {
             </p>
           </div>
 
-        {/* ── C: Graphic Design (Smaller Card) ── */}
+        {/* ── C: Graphic Design (auto-height, no overflow:hidden) ── */}
         <div className="work-card" style={{
           gridColumn: '3 / 4',
           gridRow: '1 / 2',
-            borderRadius: '24px',
-            overflow: 'hidden',
-            position: 'relative',
-            background: 'rgba(245, 245, 247, 0.8)',
-            border: '1px solid rgba(77, 54, 139, 0.1)',
-            padding: '1.25rem',
-          }}>
+          borderRadius: '24px',
+          position: 'relative',
+          background: 'rgba(245, 245, 247, 0.8)',
+          border: '1px solid rgba(77, 54, 139, 0.1)',
+          padding: '1.25rem',
+          alignSelf: 'start',
+        }}>
           <div style={{
             display: 'grid', gridTemplateColumns: '1fr 1fr',
             gap: '0.5rem', marginBottom: '1rem',
@@ -421,11 +444,11 @@ export default function Work() {
                 position: 'absolute', inset: 0, display: 'block',
               }}
             />
-            {/* No dark overlay — let image be visible */}
+            {/* Bottom-only gradient — image shows fully, text is readable */}
             <div style={{
               position: 'absolute', bottom: 0, left: 0, right: 0,
-              background: 'linear-gradient(transparent, rgba(17,17,22,0.75) 80%)',
-              padding: '2.5rem 1.5rem 1.25rem',
+              background: 'linear-gradient(transparent, rgba(0,0,0,0.58) 85%)',
+              padding: '2rem 1.5rem 1.25rem',
               zIndex: 2,
             }}>
               <div style={{ display: 'flex', gap: '0.4rem', marginBottom: '0.4rem' }}>
@@ -434,13 +457,13 @@ export default function Work() {
               </div>
               <h3 style={{
                 fontFamily: "'Readex Pro', sans-serif", fontSize: '1.1rem',
-                fontWeight: 700, color: 'var(--text-primary)', marginBottom: '0.25rem',
+                fontWeight: 700, color: '#fff', marginBottom: '0.25rem',
               }}>
                 Video Production & Podcasts
               </h3>
               <p style={{
                 fontFamily: "'Inter', sans-serif", fontSize: '0.75rem',
-                color: 'var(--text-secondary)', lineHeight: 1.5,
+                color: 'rgba(255,255,255,0.85)', lineHeight: 1.5,
               }}>
                 Professional multi-camera setups for video podcasts and talking-head content — from lighting to final edit.
               </p>
@@ -525,19 +548,19 @@ export default function Work() {
         /* scrollbar hide */
         [style*="overflowX: auto"]::-webkit-scrollbar { display: none; }
 
-        /* social feed auto-scroll animation */
+        /* social feed gentle oscillate — fixed pixel drift, never empty */
         .social-feed-scroll {
-          animation: socialScroll 15s linear infinite;
+          animation: socialScroll 20s ease-in-out infinite;
         }
         .service-card-social:hover .social-feed-scroll {
           animation-play-state: paused;
         }
 
         @keyframes socialScroll {
-          0%   { transform: translateY(0); }
-          48%  { transform: translateY(calc(-50% + 10px)); }
-          52%  { transform: translateY(calc(-50% + 10px)); }
-          100% { transform: translateY(0); }
+          0%   { transform: translateY(0px); }
+          48%  { transform: translateY(-130px); }
+          52%  { transform: translateY(-130px); }
+          100% { transform: translateY(0px); }
         }
 
         /* scroll track indicator */
