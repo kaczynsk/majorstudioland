@@ -250,7 +250,7 @@ export default function Work() {
            ══════════════════════════════════════════════ */}
       <div style={{
         display: 'grid',
-        gridTemplateColumns: '1.2fr 1fr 1fr',
+        gridTemplateColumns: '1.2fr 1fr',
         gridTemplateRows: 'auto auto',
         gap: '1.5rem',
         padding: '0 2.5rem',
@@ -316,61 +316,9 @@ export default function Work() {
             </div>
           </div>
 
-        {/* ── B: Paid Advertising (auto-height, no overflow:hidden) ── */}
+        {/* ── C: Graphic Design (now col 2, row 1) ── */}
         <div className="work-card" style={{
           gridColumn: '2 / 3',
-          gridRow: '1 / 2',
-          borderRadius: '24px',
-          position: 'relative',
-          background: 'rgba(245, 245, 247, 0.8)',
-          border: '1px solid rgba(77, 54, 139, 0.1)',
-          padding: '1.25rem',
-          alignSelf: 'start',
-        }}>
-          <div style={{
-            display: 'grid', gridTemplateColumns: '1fr 1fr',
-            gap: '0.5rem', marginBottom: '1rem',
-          }}>
-              {[1, 2, 3, 4].map(n => (
-                <div key={n} style={{
-                  borderRadius: '12px', overflow: 'hidden',
-                  border: '1px solid rgba(77, 54, 139, 0.12)',
-                  cursor: 'pointer', transition: 'transform 0.2s ease',
-                }}
-                  onClick={() => openLightbox(`/work/ads/Ads-0${n}.png`, `Ad campaign ${n}`)}
-                  onMouseEnter={e => { (e.currentTarget as HTMLElement).style.transform = 'scale(1.03)'; }}
-                  onMouseLeave={e => { (e.currentTarget as HTMLElement).style.transform = 'scale(1)'; }}
-                >
-                  <img
-                    src={`/work/ads/Ads-0${n}.png`}
-                    alt={`Ad campaign ${n}`}
-                    loading="lazy"
-                    style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', aspectRatio: '9/16' }}
-                  />
-                </div>
-              ))}
-            </div>
-            <div style={{ display: 'flex', gap: '0.4rem', marginBottom: '0.4rem', flexWrap: 'wrap' }}>
-              <span className="tag-pill" style={{ fontSize: '0.58rem' }}>Facebook Ads</span>
-              <span className="tag-pill" style={{ fontSize: '0.58rem' }}>Instagram Ads</span>
-            </div>
-            <h3 style={{
-              fontFamily: "'Readex Pro', sans-serif", fontSize: '1.05rem',
-              fontWeight: 700, color: 'var(--text-primary)', marginBottom: '0.2rem',
-            }}>
-              Paid Advertising
-            </h3>
-            <p style={{
-              fontFamily: "'Inter', sans-serif", fontSize: '0.72rem',
-              color: 'var(--text-secondary)', lineHeight: 1.4,
-            }}>
-              Targeted ad campaigns across Facebook &amp; Instagram.
-            </p>
-          </div>
-
-        {/* ── C: Graphic Design (auto-height, no overflow:hidden) ── */}
-        <div className="work-card" style={{
-          gridColumn: '3 / 4',
           gridRow: '1 / 2',
           borderRadius: '24px',
           position: 'relative',
@@ -424,9 +372,9 @@ export default function Work() {
             </p>
           </div>
 
-        {/* ── D: Video Production (Wide Card) ── */}
+        {/* ── D: Video Production (col 2, row 2) ── */}
         <div className="work-card" style={{
-          gridColumn: '2 / 4',
+          gridColumn: '2 / 3',
           gridRow: '2 / 3',
             borderRadius: '24px',
             overflow: 'hidden',

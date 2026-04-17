@@ -17,26 +17,12 @@ const services = [
   {
     icon: (
       <svg width="26" height="26" viewBox="0 0 28 28" fill="none">
-        <path d="M4 20L10 14L14 18L20 10L24 14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-        <circle cx="4" cy="20" r="2" fill="currentColor" />
-        <circle cx="24" cy="14" r="2" fill="currentColor" />
-      </svg>
-    ),
-    number: '02',
-    title: 'Paid Advertising',
-    subtitle: 'Facebook · Instagram · Google',
-    description: 'Data-driven ad campaigns that generate real results — from creatives and copy to targeting, launch, and weekly performance reports.',
-    list: ['Campaign Strategy', 'Ad Creative Design', 'Audience Targeting', 'Performance Tracking'],
-  },
-  {
-    icon: (
-      <svg width="26" height="26" viewBox="0 0 28 28" fill="none">
         <rect x="2" y="4" width="24" height="18" rx="3" stroke="currentColor" strokeWidth="1.5" />
         <circle cx="10" cy="12" r="3" stroke="currentColor" strokeWidth="1.5" />
         <path d="M2 18L10 10L15 15L19 11L26 18" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     ),
-    number: '03',
+    number: '02',
     title: 'Graphic Design',
     subtitle: 'Print · Branding · Visuals',
     description: 'Striking visual assets for every touchpoint — from event printables and retail packaging to full brand identity systems.',
@@ -49,7 +35,7 @@ const services = [
         <circle cx="22" cy="6" r="3" stroke="currentColor" strokeWidth="1.5" />
       </svg>
     ),
-    number: '04',
+    number: '03',
     title: 'Video Production',
     subtitle: 'Podcast · Talking Head · Editing',
     description: 'Professional multi-camera video production for podcasts, brand films, and social content — from setup and lighting to final edit.',
@@ -97,7 +83,7 @@ export default function Services() {
         {/* Service Cards — 4 columns, compact */}
         <div style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(4, 1fr)',
+          gridTemplateColumns: 'repeat(3, 1fr)',
           gap: '1rem',
         }} className="services-grid">
           {services.map((service, i) => (
