@@ -276,19 +276,19 @@ export default function Work() {
           }}>
               <div style={{ display: 'flex', gap: '0.4rem', marginBottom: '0.5rem' }}>
                 <span className="tag-pill" style={{ fontSize: '0.58rem' }}>Social Media</span>
-                <span className="tag-pill" style={{ fontSize: '0.58rem' }}>Content</span>
+                <span className="tag-pill" style={{ fontSize: '0.58rem' }}>Video</span>
               </div>
               <h3 style={{
                 fontFamily: "'Readex Pro', sans-serif", fontSize: '1.2rem',
                 fontWeight: 700, color: 'var(--text-primary)', marginBottom: '0.3rem',
               }}>
-                Social Media Management
+                Social Media &amp; Video Production
               </h3>
               <p style={{
                 fontFamily: "'Inter', sans-serif", fontSize: '0.78rem',
                 color: 'var(--text-secondary)', lineHeight: 1.5,
               }}>
-                30+ reels and video thumbnails with a cohesive visual identity across the entire Instagram feed.
+                Content creation, reels, and video production — cohesive identity across the full feed.
               </p>
             </div>
           </div>
@@ -327,21 +327,21 @@ export default function Work() {
                 </div>
               ))}
             </div>
-            <div style={{ display: 'flex', gap: '0.4rem', marginBottom: '0.4rem' }}>
+            <div style={{ display: 'flex', gap: '0.4rem', marginBottom: '0.4rem', flexWrap: 'wrap' }}>
               <span className="tag-pill" style={{ fontSize: '0.58rem' }}>Facebook Ads</span>
               <span className="tag-pill" style={{ fontSize: '0.58rem' }}>Instagram Ads</span>
             </div>
             <h3 style={{
-              fontFamily: "'Readex Pro', sans-serif", fontSize: '1.1rem',
-              fontWeight: 700, color: 'var(--text-primary)', marginBottom: '0.25rem',
+              fontFamily: "'Readex Pro', sans-serif", fontSize: '1.05rem',
+              fontWeight: 700, color: 'var(--text-primary)', marginBottom: '0.2rem',
             }}>
               Paid Advertising
             </h3>
             <p style={{
-              fontFamily: "'Inter', sans-serif", fontSize: '0.75rem',
-              color: 'var(--text-secondary)', lineHeight: 1.5,
+              fontFamily: "'Inter', sans-serif", fontSize: '0.72rem',
+              color: 'var(--text-secondary)', lineHeight: 1.4,
             }}>
-              From concept and design to publishing — targeted ad campaigns across Facebook and Instagram that drive installs and engagement.
+              Targeted ad campaigns across Facebook &amp; Instagram.
             </p>
           </div>
 
@@ -383,21 +383,21 @@ export default function Work() {
                 </div>
               ))}
             </div>
-            <div style={{ display: 'flex', gap: '0.4rem', marginBottom: '0.4rem' }}>
+            <div style={{ display: 'flex', gap: '0.4rem', marginBottom: '0.4rem', flexWrap: 'wrap' }}>
               <span className="tag-pill" style={{ fontSize: '0.58rem' }}>Print</span>
               <span className="tag-pill" style={{ fontSize: '0.58rem' }}>Event Design</span>
             </div>
             <h3 style={{
-              fontFamily: "'Readex Pro', sans-serif", fontSize: '1.1rem',
-              fontWeight: 700, color: 'var(--text-primary)', marginBottom: '0.25rem',
+              fontFamily: "'Readex Pro', sans-serif", fontSize: '1.05rem',
+              fontWeight: 700, color: 'var(--text-primary)', marginBottom: '0.2rem',
             }}>
               Graphic Design
             </h3>
             <p style={{
-              fontFamily: "'Inter', sans-serif", fontSize: '0.75rem',
-              color: 'var(--text-secondary)', lineHeight: 1.5,
+              fontFamily: "'Inter', sans-serif", fontSize: '0.72rem',
+              color: 'var(--text-secondary)', lineHeight: 1.4,
             }}>
-              Event printables for Ignite Algiers and product visuals for retail — from concept to print-ready files.
+              From event printables to retail visuals — concept to print-ready.
             </p>
           </div>
 
@@ -421,15 +421,11 @@ export default function Work() {
                 position: 'absolute', inset: 0, display: 'block',
               }}
             />
-            {/* Dark overlay */}
-            <div style={{
-              position: 'absolute', inset: 0,
-              background: 'linear-gradient(135deg, rgba(17,17,22,0.7), rgba(17,17,22,0.4))',
-            }} />
+            {/* No dark overlay — let image be visible */}
             <div style={{
               position: 'absolute', bottom: 0, left: 0, right: 0,
-              background: 'linear-gradient(transparent, rgba(17,17,22,0.9) 70%)',
-              padding: '3rem 1.5rem 1.5rem',
+              background: 'linear-gradient(transparent, rgba(17,17,22,0.75) 80%)',
+              padding: '2.5rem 1.5rem 1.25rem',
               zIndex: 2,
             }}>
               <div style={{ display: 'flex', gap: '0.4rem', marginBottom: '0.4rem' }}>
@@ -538,9 +534,9 @@ export default function Work() {
         }
 
         @keyframes socialScroll {
-          0% { transform: translateY(0); }
-          45% { transform: translateY(calc(-100% + 500px)); }
-          55% { transform: translateY(calc(-100% + 500px)); }
+          0%   { transform: translateY(0); }
+          48%  { transform: translateY(calc(-50% + 10px)); }
+          52%  { transform: translateY(calc(-50% + 10px)); }
           100% { transform: translateY(0); }
         }
 

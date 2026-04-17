@@ -105,7 +105,7 @@ export default function Footer() {
             <h4 style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.7rem', fontWeight: 600, color: 'var(--text-tertiary)', letterSpacing: '0.15em', textTransform: 'uppercase', marginBottom: '1.25rem' }}>
               Studio
             </h4>
-            {['About', 'Work', 'Process', 'Contact'].map((item) => (
+            {['About', 'Work', 'Contact'].map((item) => (
               <div key={item} style={{ marginBottom: '0.7rem' }}>
                 <a
                   href={`#${item.toLowerCase()}`}

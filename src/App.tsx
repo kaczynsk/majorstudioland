@@ -4,7 +4,6 @@ import Hero from './components/Hero';
 import Marquee from './components/Marquee';
 import Work from './components/Work';
 import Services from './components/Services';
-import Process from './components/Process';
 import About from './components/About';
 import Testimonials from './components/Testimonials';
 import CTABanner from './components/CTABanner';
@@ -21,7 +20,6 @@ export default function App() {
         <Marquee />
         <Work />
         <Services />
-        <Process />
         <About />
         <Testimonials />
         <CTABanner />
