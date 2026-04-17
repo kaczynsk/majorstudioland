@@ -153,7 +153,22 @@ export const translations = {
     footer_services: "Services",
     footer_social: "Social",
     footer_legal: "Legal company representative: SARL DAAB",
-    footer_rights: "© 2025 Major Studios. All rights reserved."
+    footer_rights: "© 2025 Major Studios. All rights reserved.",
+
+    // Missing Keys
+    serv_video: "Video Production",
+    serv_photo: "Photography",
+    serv_branding: "Branding",
+    serv_graphic: "Graphic Design",
+    serv_event: "Event Coverage",
+    serv_web: "Web Development",
+    serv_product: "Product Design",
+    serv_digital: "Digital Strategy",
+    serv_other: "Other",
+    contact_success_title: "Ready to Start!",
+    contact_success_desc: "Your request has been received. We will get back to you within 24 hours.",
+    contact_success_btn: "Send another request",
+    contact_error_msg: "An error occurred. Please try again."
   },
   
   fr: {
@@ -310,7 +325,22 @@ export const translations = {
     footer_services: "Services",
     footer_social: "Réseaux Sociaux",
     footer_legal: "Représentant légal de l'entreprise : SARL DAAB",
-    footer_rights: "© 2025 Major Studios. Tous droits réservés."
+    footer_rights: "© 2025 Major Studios. Tous droits réservés.",
+
+    // Missing Keys
+    serv_video: "Production Vidéo",
+    serv_photo: "Photographie",
+    serv_branding: "Branding",
+    serv_graphic: "Design Graphique",
+    serv_event: "Couverture d'Événements",
+    serv_web: "Développement Web",
+    serv_product: "Design de Produit",
+    serv_digital: "Stratégie Digitale",
+    serv_other: "Autre",
+    contact_success_title: "C'est Parti !",
+    contact_success_desc: "Votre demande a été reçue. Nous vous répondrons dans les 24 heures.",
+    contact_success_btn: "Envoyer une autre demande",
+    contact_error_msg: "Une erreur est survenue. Veuillez réessayer."
   },
 
   ar: {
@@ -351,7 +381,7 @@ export const translations = {
 
     // Work - Identity Slider
     work_id_subtitle: "هوية العلامة التجارية الكاملة",
-    work_id_title: "إيجنايت الجزائر",
+    work_id_title: "MAJOR",
     work_id_desc: "الهوية البصرية ونظام الشعار والمبادئ التوجيهية لأبرز حدث تقني وتجاري في المدينة.",
     work_id_pages: "21 صفحة · تصفح تلقائي",
 
@@ -467,6 +497,21 @@ export const translations = {
     footer_services: "الخدمات",
     footer_social: "وسائل التواصل",
     footer_legal: "الممثل القانوني للشركة: SARL DAAB",
-    footer_rights: "© 2025 جميع الحقوق محفوظة لـ Major Studios."
+    footer_rights: "© 2025 جميع الحقوق محفوظة لـ Major Studios.",
+
+    // Missing Keys
+    serv_video: "إنتاج الفيديو",
+    serv_photo: "التصوير الفوتوغرافي",
+    serv_branding: "العلامة التجارية",
+    serv_graphic: "التصميم الغرافيكي",
+    serv_event: "تغطية الفعاليات",
+    serv_web: "تطوير الويب",
+    serv_product: "تصميم المنتجات",
+    serv_digital: "الاستراتيجية الرقمية",
+    serv_other: "أخرى",
+    contact_success_title: "جاهزون للبدء!",
+    contact_success_desc: "تم استلام طلبك. سنقوم بالرد عليك في غضون 24 ساعة.",
+    contact_success_btn: "إرسال طلب آخر",
+    contact_error_msg: "حدث خطأ ما. يرجى المحاولة مرة أخرى."
   }
 };
