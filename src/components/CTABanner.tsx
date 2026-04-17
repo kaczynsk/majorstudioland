@@ -1,4 +1,8 @@
+import { useLanguage } from '../i18n/LanguageContext';
+
 export default function CTABanner() {
+  const { t } = useLanguage();
+
   return (
     <section style={{
       padding: '5rem 2.5rem',
@@ -34,7 +38,7 @@ export default function CTABanner() {
         }} />
 
         <span className="section-label" style={{ display: 'block', marginBottom: '1rem' }}>
-          Ready When You Are
+          {t('cta_title1')}
         </span>
 
         <h2 style={{
@@ -46,8 +50,8 @@ export default function CTABanner() {
           color: 'var(--text-primary)',
           marginBottom: '1.5rem',
         }}>
-          The best digital brands<br />
-          <span className="gradient-text">start with a conversation.</span>
+          {t('cta_title1')}<br />
+          <span className="gradient-text">{t('cta_title2')}</span>
         </h2>
 
         <p style={{
@@ -59,8 +63,7 @@ export default function CTABanner() {
           margin: '0 auto 3rem',
           fontWeight: 300,
         }}>
-          Whether you have a brief ready or just an idea — we want to hear from you. 
-          Major things start with a single message.
+          {t('cta_desc')}
         </p>
 
         <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
@@ -70,7 +73,7 @@ export default function CTABanner() {
             className="btn-yellow"
             style={{ textDecoration: 'none', fontSize: '1rem', padding: '1rem 2.5rem' }}
           >
-            Start a Project →
+            {t('cta_btn')} →
           </a>
           <a
             href="mailto:major.algerie@gmail.com"
@@ -79,32 +82,6 @@ export default function CTABanner() {
           >
             major.algerie@gmail.com
           </a>
-        </div>
-
-        {/* Bottom decorative elements */}
-        <div style={{
-          display: 'flex',
-          justifyContent: 'center',
-          gap: '2rem',
-          marginTop: '3rem',
-          paddingTop: '2rem',
-          borderTop: '1px solid rgba(77, 54, 139, 0.15)',
-          flexWrap: 'wrap',
-        }}>
-          {[
-            '✦ No-pressure discovery call',
-            '✦ 24-hour response time',
-            '✦ Fixed-price projects available',
-          ].map((item, i) => (
-            <span key={i} style={{
-              fontFamily: "'Inter', sans-serif",
-              fontSize: '0.78rem',
-              color: 'var(--text-tertiary)',
-              letterSpacing: '0.03em',
-            }}>
-              {item}
-            </span>
-          ))}
         </div>
       </div>
     </section>

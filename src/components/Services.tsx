@@ -1,49 +1,53 @@
-const services = [
-  {
-    icon: (
-      <svg width="26" height="26" viewBox="0 0 28 28" fill="none">
-        <rect x="2" y="2" width="11" height="11" rx="3" stroke="currentColor" strokeWidth="1.5" />
-        <rect x="15" y="2" width="11" height="11" rx="3" stroke="currentColor" strokeWidth="1.5" />
-        <rect x="2" y="15" width="11" height="11" rx="3" stroke="currentColor" strokeWidth="1.5" />
-        <rect x="15" y="15" width="11" height="11" rx="3" stroke="currentColor" strokeWidth="1.5" />
-      </svg>
-    ),
-    number: '01',
-    title: 'Social Media Content',
-    subtitle: 'Content · Reels · Feed Management',
-    description: 'Full content creation for your social channels — reels, stories, carousels, and captions that build your brand and grow your audience.',
-    list: ['Feed Strategy', 'Reels & Videos', 'Community Management', 'Monthly Reports'],
-  },
-  {
-    icon: (
-      <svg width="26" height="26" viewBox="0 0 28 28" fill="none">
-        <rect x="2" y="4" width="24" height="18" rx="3" stroke="currentColor" strokeWidth="1.5" />
-        <circle cx="10" cy="12" r="3" stroke="currentColor" strokeWidth="1.5" />
-        <path d="M2 18L10 10L15 15L19 11L26 18" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    ),
-    number: '02',
-    title: 'Graphic Design',
-    subtitle: 'Print · Branding · Visuals',
-    description: 'Striking visual assets for every touchpoint — from event printables and retail packaging to full brand identity systems.',
-    list: ['Brand Identity', 'Print Design', 'Social Visuals', 'Event Design'],
-  },
-  {
-    icon: (
-      <svg width="26" height="26" viewBox="0 0 28 28" fill="none">
-        <path d="M5 5L23 14L5 23V5Z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
-        <circle cx="22" cy="6" r="3" stroke="currentColor" strokeWidth="1.5" />
-      </svg>
-    ),
-    number: '03',
-    title: 'Video Production',
-    subtitle: 'Podcast · Talking Head · Editing',
-    description: 'Professional multi-camera video production for podcasts, brand films, and social content — from setup and lighting to final edit.',
-    list: ['Podcast Production', 'Brand Films', 'Social Video', 'Full Post-Production'],
-  },
-];
+import { useLanguage } from '../i18n/LanguageContext';
 
 export default function Services() {
+  const { t } = useLanguage();
+
+  const services = [
+    {
+      icon: (
+        <svg width="26" height="26" viewBox="0 0 28 28" fill="none">
+          <rect x="2" y="2" width="11" height="11" rx="3" stroke="currentColor" strokeWidth="1.5" />
+          <rect x="15" y="2" width="11" height="11" rx="3" stroke="currentColor" strokeWidth="1.5" />
+          <rect x="2" y="15" width="11" height="11" rx="3" stroke="currentColor" strokeWidth="1.5" />
+          <rect x="15" y="15" width="11" height="11" rx="3" stroke="currentColor" strokeWidth="1.5" />
+        </svg>
+      ),
+      number: '01',
+      title: t('serv_1_title'),
+      subtitle: t('serv_1_sub'),
+      description: t('serv_1_desc'),
+      list: [t('serv_1_l1'), t('serv_1_l2'), t('serv_1_l3'), t('serv_1_l4')],
+    },
+    {
+      icon: (
+        <svg width="26" height="26" viewBox="0 0 28 28" fill="none">
+          <rect x="2" y="4" width="24" height="18" rx="3" stroke="currentColor" strokeWidth="1.5" />
+          <circle cx="10" cy="12" r="3" stroke="currentColor" strokeWidth="1.5" />
+          <path d="M2 18L10 10L15 15L19 11L26 18" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      ),
+      number: '02',
+      title: t('serv_2_title'),
+      subtitle: t('serv_2_sub'),
+      description: t('serv_2_desc'),
+      list: [t('serv_2_l1'), t('serv_2_l2'), t('serv_2_l3'), t('serv_2_l4')],
+    },
+    {
+      icon: (
+        <svg width="26" height="26" viewBox="0 0 28 28" fill="none">
+          <path d="M5 5L23 14L5 23V5Z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
+          <circle cx="22" cy="6" r="3" stroke="currentColor" strokeWidth="1.5" />
+        </svg>
+      ),
+      number: '03',
+      title: t('serv_3_title'),
+      subtitle: t('serv_3_sub'),
+      description: t('serv_3_desc'),
+      list: [t('serv_3_l1'), t('serv_3_l2'), t('serv_3_l3'), t('serv_3_l4')],
+    },
+  ];
+
   return (
     <section id="services" style={{
       padding: '5rem 2.5rem',
@@ -62,10 +66,10 @@ export default function Services() {
           gap: '1rem',
         }}>
           <div>
-            <span className="section-label">What We Do</span>
+            <span className="section-label">{t('serv_label')}</span>
             <h2 className="section-title" style={{ color: 'var(--text-primary)', marginTop: '0.5rem' }}>
-              Four services.<br />
-              <span className="gradient-text">Real results.</span>
+              {t('serv_title1')}<br />
+              <span className="gradient-text">{t('serv_title2')}</span>
             </h2>
           </div>
           <p style={{
@@ -76,7 +80,7 @@ export default function Services() {
             fontWeight: 300,
             maxWidth: '380px',
           }}>
-            End-to-end digital services built for brands that want to grow online.
+            {t('serv_desc')}
           </p>
         </div>
 

@@ -1,9 +1,11 @@
 import { useEffect, useRef } from 'react';
 import Logo from './Logo';
+import { useLanguage } from '../i18n/LanguageContext';
 
 const words = ['Brands.', 'Products.', 'Experiences.', 'Futures.'];
 
 export default function Hero() {
+  const { t } = useLanguage();
   const wordRef = useRef<HTMLSpanElement>(null);
   const wordIndex = useRef(0);
   const charIndex = useRef(0);
@@ -129,7 +131,7 @@ export default function Hero() {
         opacity: 0,
         animation: 'fadeInUp 0.7s ease 0.1s forwards',
       }}>
-        <span className="tag-pill">✦ Digital Studio</span>
+        <span className="tag-pill">✦ {t('agency')}</span>
       </div>
 
       {/* Main Title */}
@@ -143,9 +145,9 @@ export default function Hero() {
           animation: 'fadeInUp 0.8s ease 0.25s forwards',
         }}
       >
-        <span style={{ display: 'block', color: 'var(--text-primary)' }}>We Build</span>
+        <span style={{ display: 'block', color: 'var(--text-primary)' }}>{t('hero_title1')}</span>
         <span style={{ display: 'block' }}>
-          <span className="gradient-text">Digital </span>
+          <span className="gradient-text">{t('hero_title2')}{' '}</span>
           <span ref={wordRef} style={{
             background: 'linear-gradient(135deg, #fbaf17 0%, #ffd166 100%)',
             WebkitBackgroundClip: 'text',
@@ -170,8 +172,7 @@ export default function Hero() {
         opacity: 0,
         animation: 'fadeInUp 0.8s ease 0.4s forwards',
       }}>
-        Major Studios crafts bold digital identities, immersive web experiences, 
-        and scalable products that move brands forward — at scale.
+        {t('hero_subtitle')}
       </p>
 
       {/* CTA Buttons */}
@@ -189,7 +190,7 @@ export default function Hero() {
           onClick={(e) => { e.preventDefault(); document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' }); }}
           style={{ textDecoration: 'none' }}
         >
-          Start a Project →
+          {t('hero_btn_start')}
         </a>
         <a
           href="#work"
@@ -197,7 +198,7 @@ export default function Hero() {
           onClick={(e) => { e.preventDefault(); document.querySelector('#work')?.scrollIntoView({ behavior: 'smooth' }); }}
           style={{ textDecoration: 'none' }}
         >
-          View Our Work
+          {t('hero_btn_work')}
         </a>
       </div>
 
@@ -225,7 +226,7 @@ export default function Hero() {
           textTransform: 'uppercase',
         }}
       >
-        <span>Scroll</span>
+        <span>{t('hero_scroll')}</span>
         <div className="slide-right" style={{ color: 'var(--text-tertiary)' }}>
           <svg width="16" height="20" viewBox="0 0 16 20" fill="none">
             <line x1="8" y1="0" x2="8" y2="18" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />

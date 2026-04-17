@@ -1,16 +1,18 @@
 import { useState, useEffect } from 'react';
 import Logo from './Logo';
-
-const navItems = [
-  { label: 'Work', href: '#work' },
-  { label: 'Services', href: '#services' },
-  { label: 'About', href: '#about' },
-  { label: 'Contact', href: '#contact' },
-];
+import { useLanguage, Language } from '../i18n/LanguageContext';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const { t, language, setLanguage } = useLanguage();
+
+  const navItems = [
+    { label: t('nav_work'), href: '#work' },
+    { label: t('nav_services'), href: '#services' },
+    { label: t('nav_about'), href: '#about' },
+    { label: t('nav_contact'), href: '#contact' },
+  ];
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 60);
@@ -22,6 +24,11 @@ export default function Navbar() {
     setMenuOpen(false);
     const el = document.querySelector(href);
     if (el) el.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const handleLangChange = (lang: Language) => {
+    setLanguage(lang);
+    setMenuOpen(false);
   };
 
   return (
@@ -72,7 +79,7 @@ export default function Navbar() {
               letterSpacing: '0.15em',
               textTransform: 'uppercase',
               marginTop: '1px',
-            }}>Digital Agency</span>
+            }}>{t('agency')}</span>
           </div>
         </a>
 
@@ -90,15 +97,33 @@ export default function Navbar() {
           ))}
         </div>
 
-        {/* CTA */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+        {/* CTA & Lang Switch */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: '1.2rem' }}>
+          {/* Lang Switcher Desktop */}
+          <div className="hidden-mobile" style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
+            {(['fr', 'en', 'ar'] as Language[]).map((lang) => (
+              <button
+                key={lang}
+                onClick={() => setLanguage(lang)}
+                style={{
+                  background: 'none', border: 'none', cursor: 'pointer',
+                  fontFamily: "'Inter', sans-serif", fontSize: '0.75rem', fontWeight: language === lang ? 700 : 400,
+                  color: language === lang ? 'var(--text-primary)' : 'var(--text-secondary)',
+                  textTransform: 'uppercase', padding: '0.2rem',
+                }}
+              >
+                {lang}
+              </button>
+            ))}
+          </div>
+
           <a
             href="#contact"
             onClick={(e) => { e.preventDefault(); handleNav('#contact'); }}
-            className="btn-primary"
-            style={{ display: 'inline-block', textDecoration: 'none', fontSize: '0.8rem', padding: '0.6rem 1.5rem' }}
+            className="btn-primary hidden-mobile"
+            style={{ display: 'inline-block', textDecoration: 'none', fontSize: '0.75rem', padding: '0.55rem 1.2rem' }}
           >
-            Start a Project
+            {t('nav_cta')}
           </a>
           {/* Mobile menu button */}
           <button
@@ -177,8 +202,29 @@ export default function Navbar() {
               animation: `fadeInUp 0.5s ease ${navItems.length * 0.08}s forwards`,
             }}
           >
-            Start a Project →
+            {t('nav_cta')}
           </a>
+
+          {/* Lang Switcher Mobile */}
+          <div style={{
+            display: 'flex', gap: '1.5rem', marginTop: '2rem',
+            opacity: 0, animation: `fadeInUp 0.5s ease ${(navItems.length + 1) * 0.08}s forwards`,
+          }}>
+            {(['fr', 'en', 'ar'] as Language[]).map((lang) => (
+              <button
+                key={lang}
+                onClick={() => handleLangChange(lang)}
+                style={{
+                  background: 'none', border: 'none', cursor: 'pointer',
+                  fontFamily: "'Inter', sans-serif", fontSize: '1.2rem', fontWeight: language === lang ? 700 : 400,
+                  color: language === lang ? 'var(--text-primary)' : 'var(--text-secondary)',
+                  textTransform: 'uppercase',
+                }}
+              >
+                {lang}
+              </button>
+            ))}
+          </div>
         </div>
       )}
 

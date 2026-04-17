@@ -1,17 +1,21 @@
-const team = [
-  { name: 'Abderrahmane Ammali', role: 'Chief Executive Officer', photo: '/team/CEO.png' },
-  { name: 'Rabah Soltane', role: 'Chief Marketing Officer', photo: '/team/CMO.png' },
-  { name: 'Abdelalim Chicha', role: 'Chief Technology Officer', photo: '/team/CTO.png' },
-  { name: 'Amine Guellati', role: 'Graphic Design Lead', photo: '/team/GD-Lead.png' },
-  { name: 'Marya Djalab', role: 'UI/UX Lead', photo: '/team/UIUX-Lead.png' },
-  { name: 'Madjid Medjkane', role: 'Video Production Lead', photo: '/team/Video-Lead.png' },
-  { name: 'Katia Chaouar', role: 'Producer', photo: '/team/Producer.png' },
-  { name: 'Chemse Soltani', role: 'Sales', photo: '/team/Sales1.jpeg' },
-  { name: 'Hadil Khiati', role: 'Sales', photo: '/team/Sales2.jpeg' },
-  { name: 'Lina Khoubzi', role: 'Sales', photo: '/team/Sales3.jpeg' },
-];
+import { useLanguage } from '../i18n/LanguageContext';
 
 export default function About() {
+  const { t } = useLanguage();
+
+  const team = [
+    { name: 'Abderrahmane Ammali', role: t('team_ceo'), photo: '/team/CEO.png' },
+    { name: 'Rabah Soltane', role: t('team_cmo'), photo: '/team/CMO.png' },
+    { name: 'Abdelalim Chicha', role: t('team_cto'), photo: '/team/CTO.png' },
+    { name: 'Amine Guellati', role: t('team_gd'), photo: '/team/GD-Lead.png' },
+    { name: 'Marya Djalab', role: t('team_uiux'), photo: '/team/UIUX-Lead.png' },
+    { name: 'Madjid Medjkane', role: t('team_video'), photo: '/team/Video-Lead.png' },
+    { name: 'Katia Chaouar', role: t('team_producer'), photo: '/team/Producer.png' },
+    { name: 'Chemse Soltani', role: t('team_sales1'), photo: '/team/Sales1.jpeg' },
+    { name: 'Hadil Khiati', role: t('team_sales2'), photo: '/team/Sales2.jpeg' },
+    { name: 'Lina Khoubzi', role: t('team_sales3'), photo: '/team/Sales3.jpeg' },
+  ];
+
   return (
     <section id="about" style={{
       padding: '7rem 2.5rem',
@@ -29,11 +33,21 @@ export default function About() {
         }}>
           {/* Left: text */}
           <div>
-            <span className="section-label">About M Studios</span>
+            <span className="section-label">{t('about_label')}</span>
             <h2 className="section-title" style={{ color: 'var(--text-primary)', marginTop: '0.75rem', marginBottom: '1.5rem' }}>
-              Built from experience.<br />
-              <span className="gradient-text">Driven by impact.</span>
+              {t('about_title1')}<br />
+              <span className="gradient-text">{t('about_title2')}</span>
             </h2>
+            <p style={{
+              fontFamily: "'Inter', sans-serif",
+              fontSize: '1rem',
+              color: 'var(--text-secondary)',
+              lineHeight: 1.9,
+              marginBottom: '1rem',
+              fontWeight: 300,
+            }}>
+              {t('about_desc1')}
+            </p>
             <p style={{
               fontFamily: "'Inter', sans-serif",
               fontSize: '1rem',
@@ -42,9 +56,7 @@ export default function About() {
               marginBottom: '2.5rem',
               fontWeight: 300,
             }}>
-              Major Studios started from a startup company MAJOR created in 2024, and funded in 2025.
-              After gaining extensive national and international experience practicing marketing and software development,
-              we decided to open our digital services to the external world.
+              {t('about_desc2')}
             </p>
             <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
               <a
@@ -53,7 +65,7 @@ export default function About() {
                 className="btn-primary"
                 style={{ textDecoration: 'none' }}
               >
-                Work With Us →
+                {t('work_cta_btn')}
               </a>
               <a
                 href="#work"
@@ -61,7 +73,7 @@ export default function About() {
                 className="btn-outline"
                 style={{ textDecoration: 'none' }}
               >
-                See Our Work
+                {t('hero_btn_work')}
               </a>
             </div>
           </div>
@@ -88,12 +100,12 @@ export default function About() {
         {/* Team */}
         <div>
           <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
-            <span className="section-label">The Team</span>
+            <span className="section-label">{t('about_label')}</span>
             <h3 style={{
               fontFamily: "'Readex Pro', sans-serif", fontSize: '2rem',
               fontWeight: 700, color: 'var(--text-primary)', marginTop: '0.5rem',
             }}>
-              The people behind M Studios.
+              {t('about_team_title')}
             </h3>
           </div>
           <div style={{

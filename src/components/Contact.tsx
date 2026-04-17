@@ -1,9 +1,11 @@
 import { useState } from 'react';
-
-const budgets = ['< 20k DZD', '50k–200k DZD', '200k–500k DZD', '500k–1M DZD', '1M+ DZD', 'Not sure'];
-const services = ['Video production', 'Photography', 'Branding', 'Graphic design', 'Event covering', 'Web development', 'Product design', 'Digital Strategy', 'Other'];
+import { useLanguage } from '../i18n/LanguageContext';
 
 export default function Contact() {
+  const { t } = useLanguage();
+
+  const budgets = ['< 20k DZD', '50k–200k DZD', '200k–500k DZD', '500k–1M DZD', '1M+ DZD', 'Not sure'];
+  const services = [t('serv_video'), t('serv_photo'), t('serv_branding'), t('serv_graphic'), t('serv_event'), t('serv_web'), t('serv_product'), t('serv_digital'), t('serv_other')];
   const [selected, setSelected] = useState<string[]>([]);
   const [selectedBudgets, setSelectedBudgets] = useState<string[]>([]);
   const [sent, setSent] = useState(false);
@@ -40,10 +42,10 @@ export default function Contact() {
       <div style={{ maxWidth: '1100px', margin: '0 auto', position: 'relative', zIndex: 1 }}>
         {/* Header */}
         <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-          <span className="section-label">Get In Touch</span>
+          <span className="section-label">{t('contact_label')}</span>
           <h2 className="section-title" style={{ color: 'var(--text-primary)', marginTop: '0.75rem', marginBottom: '1rem' }}>
-            Ready to build<br />
-            <span className="gradient-text">something major?</span>
+            {t('contact_title1')}<br />
+            <span className="gradient-text">{t('contact_title2')}</span>
           </h2>
           <p style={{
             fontFamily: "'Inter', sans-serif",
@@ -54,7 +56,7 @@ export default function Contact() {
             margin: '0 auto',
             fontWeight: 300,
           }}>
-            Tell us about your project. We typically respond within 24 hours.
+            {t('contact_desc')}
           </p>
         </div>
 
@@ -81,7 +83,7 @@ export default function Contact() {
                   color: 'var(--text-primary)',
                   marginBottom: '0.5rem',
                 }}>
-                  Let's Connect
+                  {t('contact_connect')}
                 </h3>
                 <p style={{
                   fontFamily: "'Inter', sans-serif",
@@ -90,7 +92,7 @@ export default function Contact() {
                   lineHeight: 1.7,
                   marginBottom: '2rem',
                 }}>
-                  We work with brands around the world. No project is too big or too bold.
+                  {t('contact_connect_desc')}
                 </p>
 
                 {[
@@ -181,13 +183,13 @@ export default function Contact() {
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
                 <div>
                   <label style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.72rem', color: 'var(--text-tertiary)', letterSpacing: '0.1em', textTransform: 'uppercase', display: 'block', marginBottom: '0.5rem' }}>
-                    Your Name *
+                    {t('contact_form_name')}
                   </label>
                   <input className="form-input" type="text" placeholder="Your Name" required />
                 </div>
                 <div>
                   <label style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.72rem', color: 'var(--text-tertiary)', letterSpacing: '0.1em', textTransform: 'uppercase', display: 'block', marginBottom: '0.5rem' }}>
-                    Company
+                    {t('contact_form_company')}
                   </label>
                   <input className="form-input" type="text" placeholder="Your Company Name" />
                 </div>
@@ -195,7 +197,7 @@ export default function Contact() {
 
               <div style={{ marginBottom: '1rem' }}>
                 <label style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.72rem', color: 'var(--text-tertiary)', letterSpacing: '0.1em', textTransform: 'uppercase', display: 'block', marginBottom: '0.5rem' }}>
-                  Phone Number *
+                  {t('contact_form_phone')}
                 </label>
                 <input className="form-input" type="tel" placeholder="05XX XX XX XX" required />
               </div>
@@ -203,7 +205,7 @@ export default function Contact() {
               {/* Services */}
               <div style={{ marginBottom: '1rem' }}>
                 <label style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.72rem', color: 'var(--text-tertiary)', letterSpacing: '0.1em', textTransform: 'uppercase', display: 'block', marginBottom: '0.75rem' }}>
-                  Services Needed
+                  {t('contact_form_services')}
                 </label>
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
                   {services.map((s, i) => (
@@ -232,7 +234,7 @@ export default function Contact() {
               {/* Budget */}
               <div style={{ marginBottom: '1rem' }}>
                 <label style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.72rem', color: 'var(--text-tertiary)', letterSpacing: '0.1em', textTransform: 'uppercase', display: 'block', marginBottom: '0.75rem' }}>
-                  Project Budget
+                  {t('contact_form_budget')}
                 </label>
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
                   {budgets.map((b, i) => (
@@ -260,11 +262,11 @@ export default function Contact() {
 
               <div style={{ marginBottom: '1.5rem' }}>
                 <label style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.72rem', color: 'var(--text-tertiary)', letterSpacing: '0.1em', textTransform: 'uppercase', display: 'block', marginBottom: '0.5rem' }}>
-                  Tell Us About Your Project *
+                  {t('contact_form_tell_us')}
                 </label>
                 <textarea
                   className="form-input"
-                  placeholder="Describe your vision, goals, and timeline..."
+                  placeholder="..."
                   rows={5}
                   required
                   style={{ resize: 'vertical' }}
@@ -272,11 +274,11 @@ export default function Contact() {
               </div>
 
               <button type="submit" className="btn-yellow" style={{ width: '100%', fontSize: '1rem', padding: '1rem', borderRadius: '14px' }}>
-                Send Project Brief →
+                {t('contact_form_submit')}
               </button>
 
               <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.72rem', color: 'var(--text-tertiary)', textAlign: 'center', marginTop: '1rem' }}>
-                We respect your privacy. No spam, ever.
+                {t('contact_form_privacy')}
               </p>
             </form>
           </div>
@@ -293,13 +295,13 @@ export default function Contact() {
           }}>
             <div style={{ fontSize: '3rem', marginBottom: '1.5rem' }}>✦</div>
             <h3 style={{ fontFamily: "'Readex Pro', sans-serif", fontSize: '1.8rem', fontWeight: 700, color: 'var(--text-primary)', marginBottom: '1rem' }}>
-              Brief Received!
+              {t('contact_success_title')}
             </h3>
             <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.95rem', color: 'var(--text-secondary)', lineHeight: 1.7, marginBottom: '2rem' }}>
-              Thank you for reaching out. The M Studios team will review your brief and get back to you within 24 hours. We're excited to hear more.
+              {t('contact_success_desc')}
             </p>
             <button onClick={() => setSent(false)} className="btn-outline">
-              Send Another Brief
+              {t('contact_success_btn')}
             </button>
           </div>
         )}

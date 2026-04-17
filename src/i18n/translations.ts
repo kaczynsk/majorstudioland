@@ -1,0 +1,472 @@
+export const translations = {
+  en: {
+    // Navbar
+    nav_work: "Work",
+    nav_services: "Services",
+    nav_about: "About",
+    nav_contact: "Contact",
+    nav_cta: "Let's Talk",
+    agency: "Digital Agency",
+    
+    // Hero
+    hero_title1: "We Build",
+    hero_title2: "Digital Experiences",
+    hero_title3: "For Modern",
+    hero_title4: "Brands.",
+    hero_subtitle: "Major Studios crafts bold digital identities, immersive web experiences, and scalable products that move brands forward — at scale.",
+    hero_btn_start: "Start a Project →",
+    hero_btn_work: "View Our Work",
+    hero_scroll: "Scroll",
+
+    // Marquee
+    marquee_digital: "Digital Agency",
+    marquee_creative: "Creative Studio",
+    marquee_branding: "Branding",
+    marquee_web: "Web Design",
+    marquee_marketing: "Marketing",
+
+    // Work
+    work_label: "Our Work",
+    work_title1: "Selected",
+    work_title2: "Projects.",
+    work_desc: "A showcase of our recent digital products, brand identities, and high-performance campaigns.",
+    work_nav_all: "All",
+    work_nav_identity: "Identity",
+    work_nav_digital: "Digital",
+    work_nav_content: "Content",
+
+    // Work - Identity Slider
+    work_id_subtitle: "Full Brand Identity",
+    work_id_title: "Ignite Algiers",
+    work_id_desc: "Visual identity, logo system, and brand guidelines for the city's premier tech and business event.",
+    work_id_pages: "21 Pages · Auto-browsing",
+
+    // Work - Services Grid
+    work_grid_social_tag1: "Social Media",
+    work_grid_social_tag2: "Video",
+    work_grid_social_title: "Social Media & Video Production",
+    work_grid_social_desc: "Content creation, reels, and video production — cohesive identity across the full feed.",
+    
+    work_grid_ads_tag1: "Facebook Ads",
+    work_grid_ads_tag2: "Instagram Ads",
+    work_grid_ads_title: "Paid Advertising",
+    work_grid_ads_desc: "Targeted ad campaigns across Facebook & Instagram — from creative to results.",
+    
+    work_grid_graphic_tag1: "Print",
+    work_grid_graphic_tag2: "Event Design",
+    work_grid_graphic_title: "Graphic Design",
+    work_grid_graphic_desc: "From event printables to retail visuals — concept to print-ready.",
+
+    work_grid_video_tag1: "Video",
+    work_grid_video_tag2: "Podcasts",
+    work_grid_video_title: "Video Production & Podcasts",
+    work_grid_video_desc: "Professional multi-camera setups for video podcasts and talking-head content — from lighting to final edit.",
+    
+    work_cta_text: "Ready to be our next success story?",
+    work_cta_btn: "Let's Talk →",
+
+    // Services
+    serv_label: "What We Do",
+    serv_title1: "Three services.",
+    serv_title2: "Real results.",
+    serv_desc: "End-to-end digital services built for brands that want to grow online.",
+    
+    serv_1_title: "Social Media Content",
+    serv_1_sub: "Content · Reels · Feed Management",
+    serv_1_desc: "Full content creation for your social channels — reels, stories, carousels, and captions that build your brand and grow your audience.",
+    serv_1_l1: "Feed Strategy",
+    serv_1_l2: "Reels & Videos",
+    serv_1_l3: "Community Management",
+    serv_1_l4: "Monthly Reports",
+
+    serv_2_title: "Graphic Design",
+    serv_2_sub: "Print · Branding · Visuals",
+    serv_2_desc: "Striking visual assets for every touchpoint — from event printables and retail packaging to full brand identity systems.",
+    serv_2_l1: "Brand Identity",
+    serv_2_l2: "Print Design",
+    serv_2_l3: "Social Visuals",
+    serv_2_l4: "Event Design",
+
+    serv_3_title: "Video Production",
+    serv_3_sub: "Podcast · Talking Head · Editing",
+    serv_3_desc: "Professional multi-camera video production for podcasts, brand films, and social content — from setup and lighting to final edit.",
+    serv_3_l1: "Podcast Production",
+    serv_3_l2: "Brand Films",
+    serv_3_l3: "Social Video",
+    serv_3_l4: "Post-Production",
+
+    // About
+    about_label: "Who We Are",
+    about_title1: "A collective of",
+    about_title2: "creators.",
+    about_desc1: "Founded in 2024 and fully funded by early 2025, Major Studios began with a simple mission: to build digital experiences that matter.",
+    about_desc2: "We are a tight-knit team of strategists, designers, and producers who believe in the power of bold ideas and meticulous execution.",
+    about_team_title: "The people behind M Studios",
+
+    team_ceo: "CEO & Founder",
+    team_cmo: "Chief Marketing Officer",
+    team_cto: "Chief Technology Officer",
+    team_gd: "Graphic Design Lead",
+    team_uiux: "UI/UX Lead",
+    team_video: "Video Production Lead",
+    team_producer: "Lead Producer",
+    team_sales1: "Sales Executive",
+    team_sales2: "Sales Executive",
+    team_sales3: "Sales Executive",
+
+    // CTA Banner
+    cta_title1: "Have a project",
+    cta_title2: "in mind?",
+    cta_desc: "Whether you need a full rebrand, a high-converting campaign, or an ongoing social strategy—we're ready.",
+    cta_btn: "Get in Touch",
+
+    // Contact
+    contact_label: "Contact",
+    contact_title1: "Let's build",
+    contact_title2: "something great.",
+    contact_desc: "Fill out the form below and our team will get back to you within 24 hours.",
+    form_name: "Name",
+    form_email: "Email",
+    form_service: "Service Interested In",
+    form_service_br: "Branding & Identity",
+    form_service_social: "Social Media Mgmt",
+    form_service_ads: "Paid Advertising",
+    form_service_video: "Video Production",
+    form_service_web: "Web Design",
+    form_budget: "Estimated Budget",
+    form_budget_1: "Under $1k",
+    form_budget_2: "$1k - 5k",
+    form_budget_3: "$5k - 10k",
+    form_budget_4: "$10k+",
+    form_msg: "Project Details",
+    form_btn: "Send Message",
+    form_sending: "Sending...",
+    contact_info: "Contact Information",
+    contact_email: "Email",
+    contact_phone: "Phone",
+    contact_address: "Address",
+    contact_address_val: "10 rue freres oudek, el harrach, Algiers, Algeria",
+
+    // Footer
+    footer_desc: "A premium digital agency crafting modern brands, web experiences, and content at scale.",
+    footer_studio: "Studio",
+    footer_services: "Services",
+    footer_social: "Social",
+    footer_legal: "Legal company representative: SARL DAAB",
+    footer_rights: "© 2025 Major Studios. All rights reserved."
+  },
+  
+  fr: {
+    // Navbar
+    nav_work: "Travaux",
+    nav_services: "Services",
+    nav_about: "À propos",
+    nav_contact: "Contact",
+    nav_cta: "Discutons",
+    agency: "Agence Digitale",
+    
+    // Hero
+    hero_title1: "Nous Créons",
+    hero_title2: "Des Expériences",
+    hero_title3: "Digitales Pour Les",
+    hero_title4: "Marques.",
+    hero_subtitle: "Major Studios conçoit des identités audacieuses, des expériences immersives et des produits évolutifs qui propulsent les marques — à grande échelle.",
+    hero_btn_start: "Lancer un Projet →",
+    hero_btn_work: "Voir nos réalisations",
+    hero_scroll: "Défiler",
+
+    // Marquee
+    marquee_digital: "Agence Digitale",
+    marquee_creative: "Studio Créatif",
+    marquee_branding: "Identité de Marque",
+    marquee_web: "Création Web",
+    marquee_marketing: "Marketing",
+
+    // Work
+    work_label: "Nos Réalisations",
+    work_title1: "Projets",
+    work_title2: "Sélectionnés.",
+    work_desc: "Un aperçu de nos récents produits digitaux, identités de marque et campagnes performantes.",
+    work_nav_all: "Tout",
+    work_nav_identity: "Identité",
+    work_nav_digital: "Digital",
+    work_nav_content: "Contenu",
+
+    // Work - Identity Slider
+    work_id_subtitle: "Identité de Marque Complète",
+    work_id_title: "Ignite Algiers",
+    work_id_desc: "Identité visuelle, création de logo et charte graphique pour le principal événement tech et business de la ville.",
+    work_id_pages: "21 Pages · Navigation auto",
+
+    // Work - Services Grid
+    work_grid_social_tag1: "Réseaux Sociaux",
+    work_grid_social_tag2: "Vidéo",
+    work_grid_social_title: "Réseaux Sociaux & Production Vidéo",
+    work_grid_social_desc: "Création de contenu, reels et production vidéo — une identité cohérente sur tout le feed.",
+    
+    work_grid_ads_tag1: "Facebook Ads",
+    work_grid_ads_tag2: "Instagram Ads",
+    work_grid_ads_title: "Publicité Payante",
+    work_grid_ads_desc: "Campagnes ciblées sur Facebook et Instagram — de la création aux résultats.",
+    
+    work_grid_graphic_tag1: "Print",
+    work_grid_graphic_tag2: "Design d'Événements",
+    work_grid_graphic_title: "Design Graphique",
+    work_grid_graphic_desc: "Des supports événementiels aux visuels de vente — de la conception à l'impression.",
+
+    work_grid_video_tag1: "Vidéo",
+    work_grid_video_tag2: "Podcasts",
+    work_grid_video_title: "Production Vidéo & Podcasts",
+    work_grid_video_desc: "Configurations multi-caméras professionnelles pour podcasts vidéo et contenu — de l'éclairage au montage.",
+    
+    work_cta_text: "Prêt à être notre prochaine réussite ?",
+    work_cta_btn: "Discutons →",
+
+    // Services
+    serv_label: "Ce que nous faisons",
+    serv_title1: "Trois services.",
+    serv_title2: "Des vrais résultats.",
+    serv_desc: "Des services digitaux de bout en bout conçus pour les marques qui souhaitent se développer en ligne.",
+    
+    serv_1_title: "Contenu Réseaux Sociaux",
+    serv_1_sub: "Contenu · Reels · Gestion de Feed",
+    serv_1_desc: "Création complète de contenu pour vos réseaux sociaux — reels, stories, carrousels et textes qui développent votre marque et votre audience.",
+    serv_1_l1: "Stratégie de Contenu",
+    serv_1_l2: "Reels & Vidéos",
+    serv_1_l3: "Community Management",
+    serv_1_l4: "Rapports Mensuels",
+
+    serv_2_title: "Design Graphique",
+    serv_2_sub: "Print · Branding · Visuels",
+    serv_2_desc: "Des éléments visuels percutants pour chaque point de contact — des imprimés pour événements aux systèmes complets d'identité de marque.",
+    serv_2_l1: "Identité de Marque",
+    serv_2_l2: "Design Print",
+    serv_2_l3: "Visuels Sociaux",
+    serv_2_l4: "Design d'Événements",
+
+    serv_3_title: "Production Vidéo",
+    serv_3_sub: "Podcast · Face Caméra · Montage",
+    serv_3_desc: "Production vidéo professionnelle multi-caméras pour podcasts, films de marque et contenu social.",
+    serv_3_l1: "Production de Podcasts",
+    serv_3_l2: "Films de Marque",
+    serv_3_l3: "Vidéos Sociales",
+    serv_3_l4: "Post-Production",
+
+    // About
+    about_label: "Qui Sommes-Nous",
+    about_title1: "Un collectif de",
+    about_title2: "créateurs.",
+    about_desc1: "Fondé en 2024 et financé début 2025, Major Studios est né d'une mission simple : créer des expériences digitales qui comptent.",
+    about_desc2: "Nous sommes une équipe soudée de stratèges, designers et producteurs qui croient au pouvoir des idées audacieuses et de l'exécution minutieuse.",
+    about_team_title: "Les personnes derrière M Studios",
+
+    team_ceo: "PDG & Fondateur",
+    team_cmo: "Directeur Marketing",
+    team_cto: "Directeur Technique",
+    team_gd: "Lead Design Graphique",
+    team_uiux: "Lead UI/UX",
+    team_video: "Lead Production Vidéo",
+    team_producer: "Producteur Principal",
+    team_sales1: "Responsable Commercial",
+    team_sales2: "Responsable Commercial",
+    team_sales3: "Responsable Commercial",
+
+    // CTA Banner
+    cta_title1: "Vous avez un projet",
+    cta_title2: "en tête ?",
+    cta_desc: "Que vous ayez besoin d'une refonte complète, d'une campagne très performante ou d'une stratégie sociale continue—nous sommes prêts.",
+    cta_btn: "Contactez-nous",
+
+    // Contact
+    contact_label: "Contact",
+    contact_title1: "Construisons quelque",
+    contact_title2: "chose de grand.",
+    contact_desc: "Remplissez le formulaire ci-dessous et notre équipe vous répondra sous 24 heures.",
+    form_name: "Nom",
+    form_email: "Email",
+    form_service: "Service Souhaité",
+    form_service_br: "Branding & Identité",
+    form_service_social: "Gestion de Réseaux",
+    form_service_ads: "Publicité Payante",
+    form_service_video: "Production Vidéo",
+    form_service_web: "Création Web",
+    form_budget: "Budget Estimé",
+    form_budget_1: "Moins de 1k$",
+    form_budget_2: "1k$ - 5k$",
+    form_budget_3: "5k$ - 10k$",
+    form_budget_4: "10k$+",
+    form_msg: "Détails du Projet",
+    form_btn: "Envoyer le Message",
+    form_sending: "Envoi...",
+    contact_info: "Coordonnées",
+    contact_email: "Email",
+    contact_phone: "Téléphone",
+    contact_address: "Adresse",
+    contact_address_val: "10 rue des frères oudek, el harrach, Alger, Algérie",
+
+    // Footer
+    footer_desc: "Une agence digitale premium créant des marques modernes, des expériences web et du contenu à grande échelle.",
+    footer_studio: "Studio",
+    footer_services: "Services",
+    footer_social: "Réseaux Sociaux",
+    footer_legal: "Représentant légal de l'entreprise : SARL DAAB",
+    footer_rights: "© 2025 Major Studios. Tous droits réservés."
+  },
+
+  ar: {
+    // Navbar
+    nav_work: "أعمالنا",
+    nav_services: "خدماتنا",
+    nav_about: "من نحن",
+    nav_contact: "اتصل بنا",
+    nav_cta: "لنتحدث",
+    agency: "وكالة رقمية",
+    
+    // Hero
+    hero_title1: "نحن نصنع",
+    hero_title2: "تجارب رقمية",
+    hero_title3: "للعلامات التجارية",
+    hero_title4: "الحديثة.",
+    hero_subtitle: "استوديوهات ماجور تصمم هويات رقمية جريئة وتجارب ويب غامرة ومنتجات قابلة للتطوير تدفع العلامات التجارية إلى الأمام.",
+    hero_btn_start: "ابدأ مشروعك ←",
+    hero_btn_work: "شاهد أعمالنا",
+    hero_scroll: "تصفح",
+
+    // Marquee
+    marquee_digital: "وكالة رقمية",
+    marquee_creative: "استوديو إبداعي",
+    marquee_branding: "هوية العلامة",
+    marquee_web: "تصميم المواقع",
+    marquee_marketing: "تسويق",
+
+    // Work
+    work_label: "أعمالنا",
+    work_title1: "مشاريع",
+    work_title2: "مختارة.",
+    work_desc: "عرض لمنتجاتنا الرقمية الأخيرة، هويات العلامات التجارية، والحملات ذات الأداء العالي.",
+    work_nav_all: "الكل",
+    work_nav_identity: "الهوية",
+    work_nav_digital: "الرقمية",
+    work_nav_content: "المحتوى",
+
+    // Work - Identity Slider
+    work_id_subtitle: "هوية العلامة التجارية الكاملة",
+    work_id_title: "إيجنايت الجزائر",
+    work_id_desc: "الهوية البصرية ونظام الشعار والمبادئ التوجيهية لأبرز حدث تقني وتجاري في المدينة.",
+    work_id_pages: "21 صفحة · تصفح تلقائي",
+
+    // Work - Services Grid
+    work_grid_social_tag1: "وسائل التواصل الجتماعي",
+    work_grid_social_tag2: "فيديو",
+    work_grid_social_title: "إدارة وسائل التواصل وإنتاج الفيديو",
+    work_grid_social_desc: "إنشاء المحتوى والريلز وإنتاج الفيديو — هوية متماسكة عبر كامل المنصات.",
+    
+    work_grid_ads_tag1: "إعلانات فيسبوك",
+    work_grid_ads_tag2: "إعلانات إنستغرام",
+    work_grid_ads_title: "الإعلانات المدفوعة",
+    work_grid_ads_desc: "حملات إعلانية مستهدفة عبر فيسبوك وإنستغرام — من التصميم إلى النتائج.",
+    
+    work_grid_graphic_tag1: "طباعة",
+    work_grid_graphic_tag2: "تصميم الفعاليات",
+    work_grid_graphic_title: "التصميم الغرافيكي",
+    work_grid_graphic_desc: "من مطبوعات الفعاليات إلى المرئيات التجارية — من الفكرة إلى الطباعة.",
+
+    work_grid_video_tag1: "فيديو",
+    work_grid_video_tag2: "بودكاست",
+    work_grid_video_title: "إنتاج الفيديو والبودكاست",
+    work_grid_video_desc: "إعدادات احترافية متعددة الكاميرات للبودكاست المرئي والمحتوى — من الإضاءة إلى المونتاج.",
+    
+    work_cta_text: "جاهز لتكون قصة نجاحنا القادمة؟",
+    work_cta_btn: "لنتحدث ←",
+
+    // Services
+    serv_label: "ماذا نفعل",
+    serv_title1: "ثلاث خدمات.",
+    serv_title2: "نتائج حقيقية.",
+    serv_desc: "خدمات رقمية متكاملة مصممة للعلامات التجارية التي ترغب في النمو عبر الإنترنت.",
+    
+    serv_1_title: "محتوى وسائل التواصل",
+    serv_1_sub: "محتوى · ريلز · إدارة الصفحات",
+    serv_1_desc: "إنشاء محتوى كامل لمنصاتك — ريلز، قصص، ومنشورات تبني علامتك التجارية وتزيد من جمهورك.",
+    serv_1_l1: "استراتيجية المحتوى",
+    serv_1_l2: "الريلز والفيديوهات",
+    serv_1_l3: "إدارة المجتمع",
+    serv_1_l4: "تقارير شهرية",
+
+    serv_2_title: "التصميم الغرافيكي",
+    serv_2_sub: "طباعة · هوية بصرية · مرئيات",
+    serv_2_desc: "عناصر بصرية مذهلة لكل نقطة تواصل — من مطبوعات الفعاليات إلى أنظمة هوية العلامة التجارية الكاملة.",
+    serv_2_l1: "هوية العلامة التجارية",
+    serv_2_l2: "تصميم المطبوعات",
+    serv_2_l3: "مرئيات التواصل",
+    serv_2_l4: "تصميم الفعاليات",
+
+    serv_3_title: "إنتاج الفيديو",
+    serv_3_sub: "بودكاست · تصوير · مونتاج",
+    serv_3_desc: "إنتاج فيديو احترافي متعدد الكاميرات للبودكاست، أفلام العلامات التجارية، والمحتوى الاجتماعي.",
+    serv_3_l1: "إنتاج البودكاست",
+    serv_3_l2: "أفلام العلامات التجارية",
+    serv_3_l3: "فيديوهات المنصات",
+    serv_3_l4: "ما بعد الإنتاج",
+
+    // About
+    about_label: "من نحن",
+    about_title1: "مجموعة من",
+    about_title2: "المبدعين.",
+    about_desc1: "تأسست استوديوهات ماجور في عام 2024 وحصلت على تمويل كامل أوائل عام 2025 بناءً على مهمة بسيطة: تقديم تجارب رقمية ذات تأثير.",
+    about_desc2: "نحن فريق متماسك من الاستراتيجيين والمصممين والمنتجين نؤمن بقوة الأفكار الجريئة والتنفيذ الدقيق.",
+    about_team_title: "الأشخاص وراء ماجور ستوديوز",
+
+    team_ceo: "المدير التنفيذي والمؤسس",
+    team_cmo: "مدير التسويق",
+    team_cto: "المدير التقني",
+    team_gd: "مسؤول التصميم",
+    team_uiux: "مسؤول واجهة المستخدم",
+    team_video: "مسؤول الإنتاج المرئي",
+    team_producer: "المنتج الرئيسي",
+    team_sales1: "مسؤول المبيعات",
+    team_sales2: "مسؤول المبيعات",
+    team_sales3: "مسؤول المبيعات",
+
+    // CTA Banner
+    cta_title1: "هل لديك مشروع",
+    cta_title2: "في ذهنك؟",
+    cta_desc: "سواء كنت بحاجة إلى تجديد هوية كامل، أو حملة عالية التحويل، أو استراتيجية اجتماعية مستمرة—نحن جاهزون.",
+    cta_btn: "تواصل معنا",
+
+    // Contact
+    contact_label: "اتصل بنا",
+    contact_title1: "لنبني شيئاً",
+    contact_title2: "عظيماً.",
+    contact_desc: "املأ النموذج أدناه وسيقوم فريقنا بالرد عليك في غضون 24 ساعة.",
+    form_name: "الاسم",
+    form_email: "البريد الإلكتروني",
+    form_service: "الخدمة المطلوبة",
+    form_service_br: "الهوية والعلامة التجارية",
+    form_service_social: "إدارة التواصل الاجتماعي",
+    form_service_ads: "الإعلانات المدفوعة",
+    form_service_video: "إنتاج الفيديو",
+    form_service_web: "تصميم المواقع",
+    form_budget: "الميزانية المقدرة",
+    form_budget_1: "أقل من 1k$",
+    form_budget_2: "1k$ - 5k$",
+    form_budget_3: "5k$ - 10k$",
+    form_budget_4: "10k$+",
+    form_msg: "تفاصيل المشروع",
+    form_btn: "إرسال الرسالة",
+    form_sending: "جاري الإرسال...",
+    contact_info: "معلومات الاتصال",
+    contact_email: "البريد الإلكتروني",
+    contact_phone: "الهاتف",
+    contact_address: "العنوان",
+    contact_address_val: "10 شارع الإخوة عودك، الحراش، الجزائر العاصمة، الجزائر",
+
+    // Footer
+    footer_desc: "وكالة رقمية ممتازة تصمم علامات تجارية حديثة وتجارب ويب ومحتوى على نطاق واسع.",
+    footer_studio: "الاستوديو",
+    footer_services: "الخدمات",
+    footer_social: "وسائل التواصل",
+    footer_legal: "الممثل القانوني للشركة: SARL DAAB",
+    footer_rights: "© 2025 جميع الحقوق محفوظة لـ Major Studios."
+  }
+};

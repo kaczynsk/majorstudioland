@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
+import { useLanguage } from '../i18n/LanguageContext';
 
 /* ── branding gallery (21 pages) ── */
 const brandingPages = Array.from({ length: 21 }, (_, i) => ({
@@ -7,6 +8,7 @@ const brandingPages = Array.from({ length: 21 }, (_, i) => ({
 }));
 
 export default function Work() {
+  const { t } = useLanguage();
   /* ── lightbox state ── */
   const [lightbox, setLightbox] = useState<{ open: boolean; src: string; alt: string }>({
     open: false,
@@ -101,17 +103,17 @@ export default function Work() {
         <div style={{ padding: '0 2.5rem', marginBottom: '3.5rem' }}>
           <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', flexWrap: 'wrap', gap: '1.5rem' }}>
             <div>
-              <span className="section-label">Our Work</span>
+              <span className="section-label">{t('work_label')}</span>
               <h2 className="section-title" style={{ color: 'var(--text-primary)', marginTop: '0.75rem' }}>
-                Real projects,<br />
-                <span className="gradient-text">real results.</span>
+                {t('work_title1')}<br />
+                <span className="gradient-text">{t('work_title2')}</span>
               </h2>
             </div>
             <p style={{
               fontFamily: "'Inter', sans-serif", fontSize: '0.9rem',
               color: 'var(--text-tertiary)', maxWidth: '400px', lineHeight: 1.7, fontWeight: 300,
             }}>
-              From a full brand identity to social content, ads, and video — here's what we deliver when a client trusts us with their vision.
+              {t('work_desc')}
             </p>
           </div>
         </div>
@@ -141,13 +143,13 @@ export default function Work() {
                 fontFamily: "'Readex Pro', sans-serif", fontSize: 'clamp(1.4rem, 3vw, 2rem)',
                 fontWeight: 700, color: 'var(--text-primary)', marginBottom: '0.4rem',
               }}>
-                MAJOR — Full Brand Identity
+                {t('work_id_title')} — {t('work_id_subtitle')}
               </h3>
               <p style={{
                 fontFamily: "'Inter', sans-serif", fontSize: '0.85rem',
                 color: 'var(--text-secondary)', lineHeight: 1.6, maxWidth: '520px',
               }}>
-                A complete graphic charter for an innovative educational platform — from logo design and color systems to mascot creation, typography, and bilingual social media templates. 21 pages of structured brand identity.
+                {t('work_id_desc')}
               </p>
             </div>
             <div style={{
@@ -159,7 +161,7 @@ export default function Work() {
                 <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
                 <polyline points="14 2 14 8 20 8" />
               </svg>
-              21 Pages · Auto-browsing
+              {t('work_id_pages')}
             </div>
           </div>
 
@@ -297,20 +299,20 @@ export default function Work() {
             zIndex: 2,
           }}>
             <div style={{ display: 'flex', gap: '0.4rem', marginBottom: '0.5rem' }}>
-              <span className="tag-pill" style={{ fontSize: '0.58rem' }}>Social Media</span>
-              <span className="tag-pill" style={{ fontSize: '0.58rem' }}>Video</span>
+              <span className="tag-pill" style={{ fontSize: '0.58rem' }}>{t('work_grid_social_tag1')}</span>
+              <span className="tag-pill" style={{ fontSize: '0.58rem' }}>{t('work_grid_social_tag2')}</span>
             </div>
             <h3 style={{
               fontFamily: "'Readex Pro', sans-serif", fontSize: '1.2rem',
               fontWeight: 700, color: 'var(--text-primary)', marginBottom: '0.3rem',
             }}>
-              Social Media &amp; Video Production
+              {t('work_grid_social_title')}
             </h3>
             <p style={{
               fontFamily: "'Inter', sans-serif", fontSize: '0.78rem',
               color: 'var(--text-secondary)', lineHeight: 1.5,
             }}>
-              Content creation, reels, and video production — cohesive identity across the full feed.
+              {t('work_grid_social_desc')}
             </p>
           </div>
         </div>
@@ -350,20 +352,20 @@ export default function Work() {
             ))}
           </div>
           <div style={{ display: 'flex', gap: '0.4rem', marginBottom: '0.4rem', flexWrap: 'wrap' }}>
-            <span className="tag-pill" style={{ fontSize: '0.58rem' }}>Facebook Ads</span>
-            <span className="tag-pill" style={{ fontSize: '0.58rem' }}>Instagram Ads</span>
+            <span className="tag-pill" style={{ fontSize: '0.58rem' }}>{t('work_grid_ads_tag1')}</span>
+            <span className="tag-pill" style={{ fontSize: '0.58rem' }}>{t('work_grid_ads_tag2')}</span>
           </div>
           <h3 style={{
             fontFamily: "'Readex Pro', sans-serif", fontSize: '1.05rem',
             fontWeight: 700, color: 'var(--text-primary)', marginBottom: '0.2rem',
           }}>
-            Paid Advertising
+            {t('work_grid_ads_title')}
           </h3>
           <p style={{
             fontFamily: "'Inter', sans-serif", fontSize: '0.72rem',
             color: 'var(--text-secondary)', lineHeight: 1.4,
           }}>
-            Targeted ad campaigns across Facebook &amp; Instagram — from creative to results.
+            {t('work_grid_ads_desc')}
           </p>
         </div>
 
@@ -404,20 +406,20 @@ export default function Work() {
             ))}
           </div>
           <div style={{ display: 'flex', gap: '0.4rem', marginBottom: '0.4rem', flexWrap: 'wrap' }}>
-            <span className="tag-pill" style={{ fontSize: '0.58rem' }}>Print</span>
-            <span className="tag-pill" style={{ fontSize: '0.58rem' }}>Event Design</span>
+            <span className="tag-pill" style={{ fontSize: '0.58rem' }}>{t('work_grid_graphic_tag1')}</span>
+            <span className="tag-pill" style={{ fontSize: '0.58rem' }}>{t('work_grid_graphic_tag2')}</span>
           </div>
           <h3 style={{
             fontFamily: "'Readex Pro', sans-serif", fontSize: '1.05rem',
             fontWeight: 700, color: 'var(--text-primary)', marginBottom: '0.2rem',
           }}>
-            Graphic Design
+            {t('work_grid_graphic_title')}
           </h3>
           <p style={{
             fontFamily: "'Inter', sans-serif", fontSize: '0.72rem',
             color: 'var(--text-secondary)', lineHeight: 1.4,
           }}>
-            From event printables to retail visuals — concept to print-ready.
+            {t('work_grid_graphic_desc')}
           </p>
         </div>
 
@@ -451,20 +453,20 @@ export default function Work() {
             zIndex: 2,
           }}>
             <div style={{ display: 'flex', gap: '0.4rem', marginBottom: '0.5rem' }}>
-              <span className="tag-pill" style={{ fontSize: '0.58rem' }}>Video</span>
-              <span className="tag-pill" style={{ fontSize: '0.58rem' }}>Podcasts</span>
+              <span className="tag-pill" style={{ fontSize: '0.58rem' }}>{t('work_grid_video_tag1')}</span>
+              <span className="tag-pill" style={{ fontSize: '0.58rem' }}>{t('work_grid_video_tag2')}</span>
             </div>
             <h3 style={{
               fontFamily: "'Readex Pro', sans-serif", fontSize: '1.15rem',
               fontWeight: 700, color: '#fff', marginBottom: '0.2rem',
             }}>
-              Video Production &amp; Podcasts
+              {t('work_grid_video_title')}
             </h3>
             <p style={{
               fontFamily: "'Inter', sans-serif", fontSize: '0.75rem',
               color: 'rgba(255,255,255,0.82)', lineHeight: 1.5, maxWidth: '520px',
             }}>
-              Professional multi-camera setups for video podcasts and talking-head content — from lighting to final edit.
+              {t('work_grid_video_desc')}
             </p>
           </div>
         </div>
@@ -485,7 +487,7 @@ export default function Work() {
               fontFamily: "'Inter', sans-serif",
               color: 'var(--text-secondary)', fontSize: '0.9rem',
             }}>
-              Ready to be our next success story?
+              {t('work_cta_text')}
             </p>
             <a
               href="#contact"
@@ -493,7 +495,7 @@ export default function Work() {
               className="btn-primary"
               style={{ textDecoration: 'none', padding: '0.6rem 1.6rem', fontSize: '0.82rem' }}
             >
-              Let's Talk →
+              {t('work_cta_btn')}
             </a>
           </div>
         </div>

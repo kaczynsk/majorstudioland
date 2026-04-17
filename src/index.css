@@ -623,3 +623,27 @@ body {
   nav { padding-left: 1.25rem !important; padding-right: 1.25rem !important; }
   footer { padding-left: 1.25rem !important; padding-right: 1.25rem !important; }
 }
+
+/* =========================================
+   RTL SUPPORT
+   ========================================= */
+html[dir="rtl"] .slide-right {
+  animation-name: slideLeft;
+  transform: rotate(180deg);
+}
+
+@keyframes slideLeft {
+  0%, 100% { transform: translateX(0); opacity: 0.5; }
+  50% { transform: translateX(-6px); opacity: 1; }
+}
+
+html[dir="rtl"] .hero-title [style*="borderRight"] {
+  border-right: none !important;
+  border-left: 3px solid #fbaf17 !important;
+  padding-right: 0 !important;
+  padding-left: 4px !important;
+}
+
+html[dir="rtl"] .btn-primary::after, html[dir="rtl"] .btn-yellow::after {
+  transform: scaleX(-1);
+}

@@ -1,6 +1,8 @@
 import Logo from './Logo';
+import { useLanguage } from '../i18n/LanguageContext';
 
 export default function Footer() {
+  const { t } = useLanguage();
   const year = new Date().getFullYear();
 
   const handleNav = (href: string) => {
@@ -27,7 +29,7 @@ export default function Footer() {
               <Logo size={36} style={{ boxShadow: '0 0 20px rgba(77, 54, 139, 0.3)', borderRadius: '10px' }} />
               <div style={{ lineHeight: 1 }}>
                 <span style={{ fontFamily: "'Readex Pro', sans-serif", fontWeight: 700, fontSize: '1rem', color: 'var(--text-primary)', display: 'block' }}>Major Studios</span>
-                <span style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.55rem', color: 'var(--text-tertiary)', letterSpacing: '0.15em', textTransform: 'uppercase' }}>Digital Agency</span>
+                <span style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.55rem', color: 'var(--text-tertiary)', letterSpacing: '0.15em', textTransform: 'uppercase' }}>{t('agency')}</span>
               </div>
             </div>
             <p style={{
@@ -38,7 +40,7 @@ export default function Footer() {
               maxWidth: '280px',
               marginBottom: '1.5rem',
             }}>
-              We build bold digital identities, immersive experiences, and scalable products for ambitious brands.
+              {t('footer_desc')}
             </p>
             {/* Social icons */}
             <div style={{ display: 'flex', gap: '0.75rem' }}>
@@ -103,16 +105,20 @@ export default function Footer() {
           {/* Nav columns */}
           <div>
             <h4 style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.7rem', fontWeight: 600, color: 'var(--text-tertiary)', letterSpacing: '0.15em', textTransform: 'uppercase', marginBottom: '1.25rem' }}>
-              Studio
+              {t('footer_nav_studio')}
             </h4>
-            {['About', 'Work', 'Contact'].map((item) => (
-              <div key={item} style={{ marginBottom: '0.7rem' }}>
+            {[
+              { label: t('nav_about'), href: '#about' }, 
+              { label: t('nav_work'), href: '#work' }, 
+              { label: t('nav_contact'), href: '#contact' }
+            ].map((item) => (
+              <div key={item.href} style={{ marginBottom: '0.7rem' }}>
                 <a
-                  href={`#${item.toLowerCase()}`}
+                  href={item.href}
                   className="footer-link"
-                  onClick={(e) => { e.preventDefault(); handleNav(`#${item.toLowerCase()}`); }}
+                  onClick={(e) => { e.preventDefault(); handleNav(item.href); }}
                 >
-                  {item}
+                  {item.label}
                 </a>
               </div>
             ))}
@@ -120,9 +126,9 @@ export default function Footer() {
 
           <div>
             <h4 style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.7rem', fontWeight: 600, color: 'var(--text-tertiary)', letterSpacing: '0.15em', textTransform: 'uppercase', marginBottom: '1.25rem' }}>
-              Services
+              {t('footer_nav_services')}
             </h4>
-            {['Social Media', 'Paid Advertising', 'Graphic Design', 'Video Production'].map((item) => (
+            {[t('serv_1_title'), t('serv_2_title'), t('serv_3_title'), t('serv_digital')].map((item) => (
               <div key={item} style={{ marginBottom: '0.7rem' }}>
                 <a href="#services" className="footer-link" onClick={(e) => { e.preventDefault(); handleNav('#services'); }}>
                   {item}
@@ -133,10 +139,10 @@ export default function Footer() {
 
           <div>
             <h4 style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.7rem', fontWeight: 600, color: 'var(--text-tertiary)', letterSpacing: '0.15em', textTransform: 'uppercase', marginBottom: '1.25rem' }}>
-              Contact
+              {t('footer_nav_contact')}
             </h4>
             <div style={{ marginBottom: '1rem' }}>
-              <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.72rem', color: 'var(--text-tertiary)', letterSpacing: '0.08em', marginBottom: '0.25rem' }}>Location</p>
+              <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.72rem', color: 'var(--text-tertiary)', letterSpacing: '0.08em', marginBottom: '0.25rem' }}>{t('footer_loc')}</p>
               <span className="footer-link" style={{ fontSize: '0.85rem', color: 'var(--text-secondary)' }}>
                 10 rue freres oudek,<br />
                 el harrach, Algiers, Algeria
@@ -160,7 +166,7 @@ export default function Footer() {
               className="btn-primary"
               style={{ textDecoration: 'none', display: 'inline-block', padding: '0.65rem 1.4rem', fontSize: '0.78rem' }}
             >
-              Start a Project
+              {t('work_cta_btn')}
             </a>
           </div>
         </div>
@@ -189,7 +195,7 @@ export default function Footer() {
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
             <span style={{ width: '7px', height: '7px', background: '#22c55e', borderRadius: '50%', display: 'inline-block', animation: 'pulseGlow 2s ease-in-out infinite' }} />
             <span style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.72rem', color: 'var(--text-tertiary)' }}>
-              Available for new projects
+              {t('footer_avail')}
             </span>
           </div>
         </div>

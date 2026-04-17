@@ -1,11 +1,15 @@
-const clients = [
-  'Brand Identity', '✦', 'Web Design', '✦', 'Digital Strategy', '✦',
-  'UI/UX Design', '✦', 'Motion & Animation', '✦', 'Product Design', '✦',
-  'Creative Direction', '✦', 'Development', '✦', 'Brand Systems', '✦',
-  'Campaign Strategy', '✦', 'Visual Identity', '✦', 'E-commerce', '✦',
-];
+import { useLanguage } from '../i18n/LanguageContext';
 
 export default function Marquee() {
+  const { t } = useLanguage();
+
+  const clients = [
+    t('marquee_branding'), '✦', t('marquee_web'), '✦', 'Digital Strategy', '✦',
+    'UI/UX Design', '✦', 'Motion & Animation', '✦', 'Product Design', '✦',
+    'Creative Direction', '✦', 'Development', '✦', 'Brand Systems', '✦',
+    'Campaign Strategy', '✦', 'Visual Identity', '✦', 'E-commerce', '✦',
+  ];
+
   const doubled = [...clients, ...clients];
 
   return (
