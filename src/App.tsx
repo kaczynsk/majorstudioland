@@ -13,7 +13,7 @@ import Footer from './components/Footer';
 
 export default function App() {
   return (
-    <div style={{ background: 'var(--dark-gray)', minHeight: '100vh', overflowX: 'hidden' }}>
+    <div style={{ background: 'var(--bg-white)', minHeight: '100vh', overflowX: 'hidden' }}>
       <Cursor />
       <Navbar />
       <main>

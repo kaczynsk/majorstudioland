@@ -64,18 +64,18 @@ export default function Hero() {
       {/* Orbs */}
       <div className="orb pulse-glow" style={{
         width: '600px', height: '600px',
-        background: 'radial-gradient(circle, rgba(77, 54, 139, 0.35) 0%, transparent 70%)',
+        background: 'radial-gradient(circle, rgba(77, 54, 139, 0.1) 0%, transparent 70%)',
         top: '-10%', left: '50%', transform: 'translateX(-50%)',
       }} />
       <div className="orb" style={{
         width: '300px', height: '300px',
-        background: 'radial-gradient(circle, rgba(251, 175, 23, 0.12) 0%, transparent 70%)',
+        background: 'radial-gradient(circle, rgba(251, 175, 23, 0.06) 0%, transparent 70%)',
         bottom: '10%', right: '-5%',
         animation: 'pulseGlow 7s ease-in-out infinite 2s',
       }} />
       <div className="orb" style={{
         width: '200px', height: '200px',
-        background: 'radial-gradient(circle, rgba(90, 93, 168, 0.25) 0%, transparent 70%)',
+        background: 'radial-gradient(circle, rgba(90, 93, 168, 0.08) 0%, transparent 70%)',
         top: '30%', left: '-5%',
         animation: 'pulseGlow 5s ease-in-out infinite 1s',
       }} />
@@ -143,7 +143,7 @@ export default function Hero() {
           animation: 'fadeInUp 0.8s ease 0.25s forwards',
         }}
       >
-        <span style={{ display: 'block', color: 'white' }}>We Build</span>
+        <span style={{ display: 'block', color: 'var(--text-primary)' }}>We Build</span>
         <span style={{ display: 'block' }}>
           <span className="gradient-text">Digital </span>
           <span ref={wordRef} style={{
@@ -161,7 +161,7 @@ export default function Hero() {
       <p style={{
         fontFamily: "'Inter', sans-serif",
         fontSize: 'clamp(1rem, 2vw, 1.2rem)',
-        color: 'rgba(255,255,255,0.5)',
+        color: 'var(--text-secondary)',
         textAlign: 'center',
         maxWidth: '580px',
         lineHeight: 1.7,
@@ -218,7 +218,7 @@ export default function Hero() {
           flexDirection: 'column',
           alignItems: 'center',
           gap: '0.5rem',
-          color: 'rgba(255,255,255,0.3)',
+          color: 'var(--text-tertiary)',
           fontFamily: "'Inter', sans-serif",
           fontSize: '0.65rem',
           letterSpacing: '0.15em',
@@ -226,7 +226,7 @@ export default function Hero() {
         }}
       >
         <span>Scroll</span>
-        <div className="slide-right" style={{ color: 'rgba(255,255,255,0.3)' }}>
+        <div className="slide-right" style={{ color: 'var(--text-tertiary)' }}>
           <svg width="16" height="20" viewBox="0 0 16 20" fill="none">
             <line x1="8" y1="0" x2="8" y2="18" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
             <polyline points="3,12 8,18 13,12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="none" />

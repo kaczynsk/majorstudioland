@@ -14,7 +14,7 @@ export default function Marquee() {
       padding: '1.5rem 0',
       borderTop: '1px solid rgba(77, 54, 139, 0.15)',
       borderBottom: '1px solid rgba(77, 54, 139, 0.15)',
-      background: 'rgba(17, 17, 20, 0.5)',
+      background: 'rgba(245, 245, 247, 0.5)',
       position: 'relative',
     }}>
       {/* Fade edges */}
@@ -41,7 +41,7 @@ export default function Marquee() {
             fontFamily: item === '✦' ? 'serif' : "'Readex Pro', sans-serif",
             fontSize: item === '✦' ? '0.7rem' : '0.82rem',
             fontWeight: item === '✦' ? 400 : 500,
-            color: item === '✦' ? '#fbaf17' : 'rgba(255,255,255,0.45)',
+            color: item === '✦' ? '#fbaf17' : 'var(--text-secondary)',
             marginRight: item === '✦' ? '1.8rem' : '1.8rem',
             letterSpacing: item === '✦' ? '0' : '0.06em',
             textTransform: 'uppercase',

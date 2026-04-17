@@ -9,7 +9,7 @@ export default function Footer() {
 
   return (
     <footer style={{
-      background: 'var(--dark-gray)',
+      background: 'var(--bg-white)',
       borderTop: '1px solid rgba(77, 54, 139, 0.15)',
       padding: '4rem 2.5rem 2rem',
     }}>
@@ -26,14 +26,14 @@ export default function Footer() {
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', marginBottom: '1.25rem' }}>
               <Logo size={36} style={{ boxShadow: '0 0 20px rgba(77, 54, 139, 0.3)', borderRadius: '10px' }} />
               <div style={{ lineHeight: 1 }}>
-                <span style={{ fontFamily: "'Readex Pro', sans-serif", fontWeight: 700, fontSize: '1rem', color: 'white', display: 'block' }}>Major Studios</span>
-                <span style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.55rem', color: 'rgba(255,255,255,0.3)', letterSpacing: '0.15em', textTransform: 'uppercase' }}>Digital Agency</span>
+                <span style={{ fontFamily: "'Readex Pro', sans-serif", fontWeight: 700, fontSize: '1rem', color: 'var(--text-primary)', display: 'block' }}>Major Studios</span>
+                <span style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.55rem', color: 'var(--text-tertiary)', letterSpacing: '0.15em', textTransform: 'uppercase' }}>Digital Agency</span>
               </div>
             </div>
             <p style={{
               fontFamily: "'Inter', sans-serif",
               fontSize: '0.85rem',
-              color: 'rgba(255,255,255,0.3)',
+              color: 'var(--text-secondary)',
               lineHeight: 1.8,
               maxWidth: '280px',
               marginBottom: '1.5rem',
@@ -57,28 +57,28 @@ export default function Footer() {
                     height: '34px',
                     borderRadius: '9px',
                     border: '1px solid rgba(77, 54, 139, 0.25)',
-                    background: 'rgba(34, 34, 42, 0.6)',
+                    background: 'rgba(245, 245, 247, 0.8)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
                     fontFamily: "'Inter', sans-serif",
                     fontSize: '0.6rem',
                     fontWeight: 700,
-                    color: 'rgba(255,255,255,0.3)',
+                    color: 'var(--text-secondary)',
                     textDecoration: 'none',
                     transition: 'all 0.2s ease',
                   }}
                   onMouseEnter={e => {
                     const el = e.target as HTMLElement;
-                    el.style.color = 'white';
-                    el.style.borderColor = 'rgba(77, 54, 139, 0.6)';
-                    el.style.background = 'rgba(77, 54, 139, 0.15)';
+                    el.style.color = 'var(--text-primary)';
+                    el.style.borderColor = 'rgba(77, 54, 139, 0.4)';
+                    el.style.background = 'rgba(77, 54, 139, 0.1)';
                   }}
                   onMouseLeave={e => {
                     const el = e.target as HTMLElement;
-                    el.style.color = 'rgba(255,255,255,0.3)';
+                    el.style.color = 'var(--text-secondary)';
                     el.style.borderColor = 'rgba(77, 54, 139, 0.25)';
-                    el.style.background = 'rgba(34, 34, 42, 0.6)';
+                    el.style.background = 'rgba(245, 245, 247, 0.8)';
                   }}
                 >
                   {s.label}
@@ -89,7 +89,7 @@ export default function Footer() {
 
           {/* Nav columns */}
           <div>
-            <h4 style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.7rem', fontWeight: 600, color: 'rgba(255,255,255,0.25)', letterSpacing: '0.15em', textTransform: 'uppercase', marginBottom: '1.25rem' }}>
+            <h4 style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.7rem', fontWeight: 600, color: 'var(--text-tertiary)', letterSpacing: '0.15em', textTransform: 'uppercase', marginBottom: '1.25rem' }}>
               Studio
             </h4>
             {['About', 'Work', 'Services', 'Process', 'Careers'].map((item) => (
@@ -106,7 +106,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.7rem', fontWeight: 600, color: 'rgba(255,255,255,0.25)', letterSpacing: '0.15em', textTransform: 'uppercase', marginBottom: '1.25rem' }}>
+            <h4 style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.7rem', fontWeight: 600, color: 'var(--text-tertiary)', letterSpacing: '0.15em', textTransform: 'uppercase', marginBottom: '1.25rem' }}>
               Services
             </h4>
             {['Brand Identity', 'Web Design', 'Product Design', 'Strategy', 'Motion', 'E-commerce'].map((item) => (
@@ -119,18 +119,18 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.7rem', fontWeight: 600, color: 'rgba(255,255,255,0.25)', letterSpacing: '0.15em', textTransform: 'uppercase', marginBottom: '1.25rem' }}>
+            <h4 style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.7rem', fontWeight: 600, color: 'var(--text-tertiary)', letterSpacing: '0.15em', textTransform: 'uppercase', marginBottom: '1.25rem' }}>
               Contact
             </h4>
             <div style={{ marginBottom: '1rem' }}>
-              <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.72rem', color: 'rgba(255,255,255,0.25)', letterSpacing: '0.08em', marginBottom: '0.25rem' }}>Email</p>
+              <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.72rem', color: 'var(--text-tertiary)', letterSpacing: '0.08em', marginBottom: '0.25rem' }}>Email</p>
               <a href="mailto:major.algerie@gmail.com" className="footer-link" style={{ fontSize: '0.85rem' }}>
                 major.algerie@gmail.com
               </a>
             </div>
             <div style={{ marginBottom: '2rem' }}>
-              <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.72rem', color: 'rgba(255,255,255,0.25)', letterSpacing: '0.08em', marginBottom: '0.25rem' }}>Phone & Whatsapp</p>
-              <span className="footer-link" style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.45)' }}>
+              <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.72rem', color: 'var(--text-tertiary)', letterSpacing: '0.08em', marginBottom: '0.25rem' }}>Phone & Whatsapp</p>
+              <span className="footer-link" style={{ fontSize: '0.85rem', color: 'var(--text-secondary)' }}>
                 0552586617
               </span>
             </div>
@@ -156,7 +156,7 @@ export default function Footer() {
           flexWrap: 'wrap',
           gap: '1rem',
         }}>
-          <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.75rem', color: 'rgba(255,255,255,0.2)' }}>
+          <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.75rem', color: 'var(--text-tertiary)' }}>
             © {year} Major Studios. All rights reserved.
           </p>
           <div style={{ display: 'flex', gap: '1.5rem' }}>
@@ -168,7 +168,7 @@ export default function Footer() {
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
             <span style={{ width: '7px', height: '7px', background: '#22c55e', borderRadius: '50%', display: 'inline-block', animation: 'pulseGlow 2s ease-in-out infinite' }} />
-            <span style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.72rem', color: 'rgba(255,255,255,0.25)' }}>
+            <span style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.72rem', color: 'var(--text-tertiary)' }}>
               Available for new projects
             </span>
           </div>

@@ -2,37 +2,37 @@ const steps = [
   {
     number: '01',
     title: 'Discovery',
-    description: 'We start by listening. Deep dives into your brand, market, competitors, and audience. We define objectives and build a shared strategic foundation.',
+    description: 'We dive deep into your brand and goals.',
     duration: '1–2 Weeks',
-    deliverables: ['Brand Audit', 'Competitive Analysis', 'Creative Brief', 'Project Roadmap'],
+    deliverables: ['Brand Audit', 'Competitive Analysis', 'Creative Brief'],
   },
   {
     number: '02',
     title: 'Strategy',
-    description: 'With insights in hand, we craft the approach. Positioning, messaging architecture, user journeys, and a creative direction that aligns with your goals.',
+    description: 'Crafting the perfect approach and roadmap.',
     duration: '1–2 Weeks',
-    deliverables: ['Brand Strategy', 'UX Architecture', 'Content Strategy', 'Creative Direction'],
+    deliverables: ['Brand Strategy', 'UX Architecture', 'Content Strategy'],
   },
   {
     number: '03',
     title: 'Design',
-    description: 'This is where it comes to life. We explore, iterate, and perfect — delivering design systems and visual work that is bold, purposeful, and unmistakably yours.',
+    description: 'Bringing your vision to life visually.',
     duration: '2–4 Weeks',
-    deliverables: ['Concepts & Iterations', 'Design System', 'UI/UX Design', 'Motion Direction'],
+    deliverables: ['Concepts & Iterations', 'Design System', 'UI/UX Design'],
   },
   {
     number: '04',
     title: 'Build',
-    description: 'Pixel-perfect development that brings the design to life. We build fast, accessible, and scalable — with clean code and immaculate attention to detail.',
+    description: 'Pixel-perfect, scalable development.',
     duration: '2–6 Weeks',
-    deliverables: ['Development', 'CMS Integration', 'QA Testing', 'Performance Audit'],
+    deliverables: ['Development', 'CMS Integration', 'QA Testing'],
   },
   {
     number: '05',
     title: 'Launch & Grow',
-    description: "We don't just ship and disappear. We support your launch, monitor performance, and offer ongoing partnership to ensure continued growth.",
+    description: 'Going live and driving growth.',
     duration: 'Ongoing',
-    deliverables: ['Launch Support', 'Analytics Setup', 'Iterations', 'Retainer Options'],
+    deliverables: ['Launch Support', 'Analytics Setup', 'Iterations'],
   },
 ];
 
@@ -46,20 +46,19 @@ export default function Process() {
       {/* Header */}
       <div style={{ maxWidth: '700px', marginBottom: '5rem' }}>
         <span className="section-label">How We Work</span>
-        <h2 className="section-title" style={{ color: 'white', marginTop: '0.75rem' }}>
-          A process built<br />
-          <span className="gradient-text">for clarity & craft.</span>
+        <h2 className="section-title" style={{ color: 'var(--text-primary)', marginTop: '0.75rem' }}>
+          Clear, transparent,<br />
+          <span className="gradient-text">and built for results.</span>
         </h2>
         <p style={{
           fontFamily: "'Inter', sans-serif",
           fontSize: '1rem',
-          color: 'rgba(255,255,255,0.4)',
+          color: 'var(--text-secondary)',
           lineHeight: 1.8,
           marginTop: '1.25rem',
           fontWeight: 300,
         }}>
-          No black boxes. No surprises. Our process is transparent, collaborative, 
-          and designed to deliver exceptional results on time.
+          We follow a streamlined five-step process to ensure every project is delivered on time, perfectly aligned with your vision.
         </p>
       </div>
 
@@ -96,7 +95,7 @@ export default function Process() {
                   fontFamily: "'Readex Pro', sans-serif",
                   fontSize: '1.5rem',
                   fontWeight: 700,
-                  color: 'white',
+                  color: 'var(--text-primary)',
                 }}>
                   {step.title}
                 </h3>
@@ -116,7 +115,7 @@ export default function Process() {
               <p style={{
                 fontFamily: "'Inter', sans-serif",
                 fontSize: '0.9rem',
-                color: 'rgba(255,255,255,0.45)',
+                color: 'var(--text-secondary)',
                 lineHeight: 1.8,
                 maxWidth: '460px',
               }}>
@@ -136,9 +135,9 @@ export default function Process() {
                 <span key={j} style={{
                   fontFamily: "'Inter', sans-serif",
                   fontSize: '0.72rem',
-                  color: 'rgba(255,255,255,0.4)',
-                  background: 'rgba(34, 34, 42, 0.8)',
-                  border: '1px solid rgba(77, 54, 139, 0.2)',
+                  color: 'var(--text-secondary)',
+                  background: 'rgba(245, 245, 247, 0.8)',
+                  border: '1px solid rgba(77, 54, 139, 0.1)',
                   padding: '0.3rem 0.75rem',
                   borderRadius: '8px',
                   letterSpacing: '0.02em',

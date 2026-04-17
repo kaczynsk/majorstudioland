@@ -45,14 +45,14 @@ export default function Testimonials() {
   return (
     <section style={{
       padding: '7rem 2.5rem',
-      background: 'var(--dark-gray)',
+      background: 'var(--bg-white)',
       borderTop: '1px solid rgba(77, 54, 139, 0.12)',
     }}>
       <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
         {/* Header */}
         <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
           <span className="section-label">Client Stories</span>
-          <h2 className="section-title" style={{ color: 'white', marginTop: '0.75rem' }}>
+          <h2 className="section-title" style={{ color: 'var(--text-primary)', marginTop: '0.75rem' }}>
             Words from the people<br />
             <span className="gradient-text">we've built for.</span>
           </h2>
@@ -83,7 +83,7 @@ export default function Testimonials() {
               <p style={{
                 fontFamily: "'Inter', sans-serif",
                 fontSize: '0.95rem',
-                color: 'rgba(255,255,255,0.7)',
+                color: 'var(--text-secondary)',
                 lineHeight: 1.8,
                 marginBottom: '1.5rem',
                 fontWeight: 300,
@@ -108,7 +108,7 @@ export default function Testimonials() {
                     fontFamily: "'Inter', sans-serif",
                     fontSize: '0.7rem',
                     fontWeight: 700,
-                    color: 'white',
+                    color: 'var(--text-primary)',
                     letterSpacing: '0.05em',
                   }}>
                     {t.avatar}
@@ -119,7 +119,7 @@ export default function Testimonials() {
                     fontFamily: "'Readex Pro', sans-serif",
                     fontSize: '0.9rem',
                     fontWeight: 600,
-                    color: 'white',
+                    color: 'var(--text-primary)',
                     marginBottom: '0.1rem',
                   }}>
                     {t.author}
@@ -127,7 +127,7 @@ export default function Testimonials() {
                   <p style={{
                     fontFamily: "'Inter', sans-serif",
                     fontSize: '0.72rem',
-                    color: 'rgba(255,255,255,0.35)',
+                    color: 'var(--text-tertiary)',
                     letterSpacing: '0.02em',
                   }}>
                     {t.role}
@@ -152,7 +152,7 @@ export default function Testimonials() {
           <span style={{
             fontFamily: "'Inter', sans-serif",
             fontSize: '0.72rem',
-            color: 'rgba(255,255,255,0.25)',
+            color: 'var(--text-tertiary)',
             letterSpacing: '0.12em',
             textTransform: 'uppercase',
           }}>
@@ -163,7 +163,7 @@ export default function Testimonials() {
               fontFamily: "'Readex Pro', sans-serif",
               fontSize: '0.85rem',
               fontWeight: 600,
-              color: 'rgba(255,255,255,0.2)',
+              color: 'var(--text-secondary)',
               letterSpacing: '0.02em',
               transition: 'color 0.2s ease',
               cursor: 'default',

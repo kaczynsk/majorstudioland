@@ -47,34 +47,21 @@ export default function About() {
           {/* Left: text */}
           <div>
             <span className="section-label">About M Studios</span>
-            <h2 className="section-title" style={{ color: 'white', marginTop: '0.75rem', marginBottom: '1.5rem' }}>
-              We are the<br />
-              <span className="gradient-text">creative backbone</span><br />
-              of ambitious brands.
+            <h2 className="section-title" style={{ color: 'var(--text-primary)', marginTop: '0.75rem', marginBottom: '1.5rem' }}>
+              Built from experience.<br />
+              <span className="gradient-text">Driven by impact.</span>
             </h2>
             <p style={{
               fontFamily: "'Inter', sans-serif",
               fontSize: '1rem',
-              color: 'rgba(255,255,255,0.45)',
-              lineHeight: 1.9,
-              marginBottom: '1.5rem',
-              fontWeight: 300,
-            }}>
-              Major Studios — or M Studios as our clients call us — is a full-service digital agency 
-              built for brands that refuse to be ordinary. We combine bold creative vision with rigorous 
-              strategy to deliver work that cuts through the noise.
-            </p>
-            <p style={{
-              fontFamily: "'Inter', sans-serif",
-              fontSize: '1rem',
-              color: 'rgba(255,255,255,0.45)',
+              color: 'var(--text-secondary)',
               lineHeight: 1.9,
               marginBottom: '2.5rem',
               fontWeight: 300,
             }}>
-              From emerging startups to established enterprises, we partner with brands at critical 
-              inflection points — rebrands, product launches, market expansions, and digital transformations. 
-              We build not just for today, but for the long game.
+              Major Studios started from a startup company MAJOR created in 2024, and funded in 2025. 
+              After gaining extensive national and international experience practicing marketing and software development, 
+              we decided to open our digital services to the external world.
             </p>
             <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
               <a
@@ -137,7 +124,7 @@ export default function About() {
               <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'center' }}>
                 <div style={{ width: '36px', height: '36px', borderRadius: '10px', background: 'rgba(251, 175, 23, 0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.2rem' }}>⭐</div>
                 <div>
-                  <div style={{ fontFamily: "'Readex Pro', sans-serif", fontWeight: 700, fontSize: '1.1rem', color: 'white' }}>5.0 / 5.0</div>
+                  <div style={{ fontFamily: "'Readex Pro', sans-serif", fontWeight: 700, fontSize: '1.1rem', color: 'var(--text-primary)' }}>5.0 / 5.0</div>
                   <div style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.68rem', color: 'rgba(255,255,255,0.4)', letterSpacing: '0.05em' }}>Client Satisfaction</div>
                 </div>
               </div>
@@ -169,7 +156,7 @@ export default function About() {
                   fontFamily: "'Readex Pro', sans-serif",
                   fontSize: '1rem',
                   fontWeight: 700,
-                  color: 'white',
+                  color: 'var(--text-primary)',
                   marginBottom: '0.75rem',
                 }}>
                   {v.title}
@@ -192,7 +179,7 @@ export default function About() {
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '3rem', flexWrap: 'wrap', gap: '1rem' }}>
             <div>
               <span className="section-label">The Team</span>
-              <h3 style={{ fontFamily: "'Readex Pro', sans-serif", fontSize: '1.8rem', fontWeight: 700, color: 'white', marginTop: '0.5rem' }}>
+              <h3 style={{ fontFamily: "'Readex Pro', sans-serif", fontSize: '1.8rem', fontWeight: 700, color: 'var(--text-primary)', marginTop: '0.5rem' }}>
                 The minds behind M Studios.
               </h3>
             </div>

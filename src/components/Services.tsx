@@ -107,7 +107,7 @@ export default function Services() {
         }}>
           <div>
             <span className="section-label">What We Do</span>
-            <h2 className="section-title" style={{ color: 'white', marginTop: '0.75rem' }}>
+            <h2 className="section-title" style={{ color: 'var(--text-primary)', marginTop: '0.75rem' }}>
               Full-stack<br />
               <span className="gradient-text">creative muscle.</span>
             </h2>
@@ -116,12 +116,11 @@ export default function Services() {
             <p style={{
               fontFamily: "'Inter', sans-serif",
               fontSize: '1rem',
-              color: 'rgba(255,255,255,0.45)',
+              color: 'var(--text-secondary)',
               lineHeight: 1.8,
               fontWeight: 300,
             }}>
-              From strategy to execution, M Studios operates as a creative partner — not just a vendor. 
-              We embed with your team and deliver work that actually moves the needle.
+              End-to-end digital services. We combine marketing expertise with robust software engineering to deliver what your brand actually needs.
             </p>
           </div>
         </div>
@@ -149,13 +148,13 @@ export default function Services() {
               <div style={{
                 width: '52px',
                 height: '52px',
-                background: 'rgba(77, 54, 139, 0.2)',
-                border: '1px solid rgba(77, 54, 139, 0.3)',
+                background: 'rgba(77, 54, 139, 0.08)',
+                border: '1px solid rgba(77, 54, 139, 0.15)',
                 borderRadius: '14px',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                color: '#c4b5fd',
+                color: 'var(--purple-main)',
                 marginBottom: '1.5rem',
               }}>
                 {service.icon}
@@ -165,7 +164,7 @@ export default function Services() {
                 fontFamily: "'Readex Pro', sans-serif",
                 fontSize: '1.15rem',
                 fontWeight: 700,
-                color: 'white',
+                color: 'var(--text-primary)',
                 marginBottom: '0.25rem',
               }}>
                 {service.title}
@@ -183,7 +182,7 @@ export default function Services() {
               <p style={{
                 fontFamily: "'Inter', sans-serif",
                 fontSize: '0.85rem',
-                color: 'rgba(255,255,255,0.4)',
+                color: 'var(--text-secondary)',
                 lineHeight: 1.7,
                 marginBottom: '1.5rem',
               }}>

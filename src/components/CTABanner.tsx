@@ -2,14 +2,14 @@ export default function CTABanner() {
   return (
     <section style={{
       padding: '5rem 2.5rem',
-      background: 'var(--dark-gray)',
+      background: 'var(--bg-white)',
       position: 'relative',
       overflow: 'hidden',
     }}>
       {/* Purple glow */}
       <div className="orb pulse-glow" style={{
         width: '700px', height: '400px',
-        background: 'radial-gradient(ellipse, rgba(77, 54, 139, 0.35) 0%, transparent 70%)',
+        background: 'radial-gradient(ellipse, rgba(77, 54, 139, 0.15) 0%, transparent 70%)',
         top: '50%', left: '50%', transform: 'translate(-50%, -50%)',
       }} />
 
@@ -19,8 +19,8 @@ export default function CTABanner() {
         position: 'relative',
         zIndex: 1,
         textAlign: 'center',
-        background: 'rgba(34, 34, 42, 0.5)',
-        border: '1px solid rgba(77, 54, 139, 0.25)',
+        background: 'rgba(245, 245, 247, 0.8)',
+        border: '1px solid rgba(77, 54, 139, 0.1)',
         borderRadius: '28px',
         padding: '4.5rem 3rem',
         backdropFilter: 'blur(20px)',
@@ -43,7 +43,7 @@ export default function CTABanner() {
           fontWeight: 700,
           lineHeight: 1.05,
           letterSpacing: '-0.025em',
-          color: 'white',
+          color: 'var(--text-primary)',
           marginBottom: '1.5rem',
         }}>
           The best digital brands<br />
@@ -53,7 +53,7 @@ export default function CTABanner() {
         <p style={{
           fontFamily: "'Inter', sans-serif",
           fontSize: '1rem',
-          color: 'rgba(255,255,255,0.4)',
+          color: 'var(--text-secondary)',
           lineHeight: 1.7,
           maxWidth: '500px',
           margin: '0 auto 3rem',
@@ -99,7 +99,7 @@ export default function CTABanner() {
             <span key={i} style={{
               fontFamily: "'Inter', sans-serif",
               fontSize: '0.78rem',
-              color: 'rgba(255,255,255,0.3)',
+              color: 'var(--text-tertiary)',
               letterSpacing: '0.03em',
             }}>
               {item}

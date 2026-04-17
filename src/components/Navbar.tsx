@@ -41,11 +41,11 @@ export default function Navbar() {
           justifyContent: 'space-between',
           transition: 'all 0.4s ease',
           background: scrolled
-            ? 'rgba(17, 17, 20, 0.92)'
+            ? 'rgba(255, 255, 255, 0.92)'
             : 'transparent',
           backdropFilter: scrolled ? 'blur(20px)' : 'none',
           borderBottom: scrolled
-            ? '1px solid rgba(77, 54, 139, 0.15)'
+            ? '1px solid rgba(77, 54, 139, 0.1)'
             : '1px solid transparent',
         }}
       >
@@ -62,14 +62,14 @@ export default function Navbar() {
               fontFamily: "'Readex Pro', sans-serif",
               fontWeight: 700,
               fontSize: '1.05rem',
-              color: 'white',
+              color: 'var(--text-primary)',
               letterSpacing: '-0.02em',
             }}>Major Studios</span>
             <span style={{
               fontFamily: "'Inter', sans-serif",
               fontSize: '0.6rem',
               fontWeight: 500,
-              color: 'rgba(255,255,255,0.4)',
+              color: 'var(--text-tertiary)',
               letterSpacing: '0.15em',
               textTransform: 'uppercase',
               marginTop: '1px',
@@ -111,21 +111,21 @@ export default function Navbar() {
               border: 'none',
               cursor: 'pointer',
               padding: '0.4rem',
-              color: 'white',
+              color: 'var(--text-primary)',
             }}
             aria-label="Menu"
           >
-            <svg width="22" height="16" viewBox="0 0 22 16" fill="none">
+              <svg width="22" height="16" viewBox="0 0 22 16" fill="none">
               {menuOpen ? (
                 <>
-                  <line x1="1" y1="1" x2="21" y2="15" stroke="white" strokeWidth="2" strokeLinecap="round" />
-                  <line x1="21" y1="1" x2="1" y2="15" stroke="white" strokeWidth="2" strokeLinecap="round" />
+                  <line x1="1" y1="1" x2="21" y2="15" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+                  <line x1="21" y1="1" x2="1" y2="15" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
                 </>
               ) : (
                 <>
-                  <line x1="0" y1="2" x2="22" y2="2" stroke="white" strokeWidth="2" strokeLinecap="round" />
-                  <line x1="0" y1="8" x2="22" y2="8" stroke="white" strokeWidth="2" strokeLinecap="round" />
-                  <line x1="0" y1="14" x2="14" y2="14" stroke="white" strokeWidth="2" strokeLinecap="round" />
+                  <line x1="0" y1="2" x2="22" y2="2" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+                  <line x1="0" y1="8" x2="22" y2="8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+                  <line x1="0" y1="14" x2="14" y2="14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
                 </>
               )}
             </svg>
@@ -139,7 +139,7 @@ export default function Navbar() {
           position: 'fixed',
           inset: 0,
           zIndex: 999,
-          background: 'rgba(17, 17, 20, 0.97)',
+          background: 'rgba(255, 255, 255, 0.97)',
           backdropFilter: 'blur(24px)',
           display: 'flex',
           flexDirection: 'column',
@@ -157,7 +157,7 @@ export default function Navbar() {
                 fontFamily: "'Readex Pro', sans-serif",
                 fontSize: '2.2rem',
                 fontWeight: 600,
-                color: 'white',
+                color: 'var(--text-primary)',
                 textDecoration: 'none',
                 letterSpacing: '-0.02em',
                 opacity: 0,

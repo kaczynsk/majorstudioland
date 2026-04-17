@@ -20,27 +20,32 @@ export default function Work() {
   const startX = useRef(0);
   const scrollLeft = useRef(0);
 
-  /* auto-scroll */
-  const autoScrollRef = useRef<number | null>(null);
+
   const isPaused = useRef(false);
 
   useEffect(() => {
+    let timeout: any;
     const el = galleryRef.current;
     if (!el) return;
 
     const tick = () => {
-      if (!isPaused.current && el) {
-        el.scrollLeft += 0.6;
-        if (el.scrollLeft >= el.scrollWidth - el.clientWidth - 1) {
-          el.scrollLeft = 0;
+      if (!isPaused.current && el && !isDragging.current) {
+        const maxScroll = el.scrollWidth - el.clientWidth;
+        if (el.scrollLeft >= maxScroll - 10) {
+          el.scrollTo({ left: 0, behavior: 'smooth' });
+        } else {
+          // Jump to next section with variable distance
+          const jump = Math.floor(Math.random() * 300) + 300;
+          el.scrollBy({ left: jump, behavior: 'smooth' });
         }
       }
-      autoScrollRef.current = requestAnimationFrame(tick);
+      // Next jump will take place in 2 to 4 seconds
+      timeout = setTimeout(tick, Math.floor(Math.random() * 2000) + 2000);
     };
-    autoScrollRef.current = requestAnimationFrame(tick);
-    return () => {
-      if (autoScrollRef.current) cancelAnimationFrame(autoScrollRef.current);
-    };
+
+    timeout = setTimeout(tick, 2000);
+
+    return () => clearTimeout(timeout);
   }, []);
 
   const onMouseDown = (e: React.MouseEvent) => {
@@ -78,14 +83,14 @@ export default function Work() {
           <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', flexWrap: 'wrap', gap: '1.5rem' }}>
             <div>
               <span className="section-label">Our Work</span>
-              <h2 className="section-title" style={{ color: 'white', marginTop: '0.75rem' }}>
+              <h2 className="section-title" style={{ color: 'var(--text-primary)', marginTop: '0.75rem' }}>
                 Real projects,<br />
                 <span className="gradient-text">real results.</span>
               </h2>
             </div>
             <p style={{
               fontFamily: "'Inter', sans-serif", fontSize: '0.9rem',
-              color: 'rgba(255,255,255,0.4)', maxWidth: '400px', lineHeight: 1.7, fontWeight: 300,
+              color: 'var(--text-tertiary)', maxWidth: '400px', lineHeight: 1.7, fontWeight: 300,
             }}>
               From a full brand identity to social content, ads, and video — here's what we deliver when a client trusts us with their vision.
             </p>
@@ -96,8 +101,8 @@ export default function Work() {
             ★  HERO CASE STUDY — MAJOR Brand Identity
            ══════════════════════════════════════════════ */}
         <div style={{
-          background: 'rgba(34, 34, 42, 0.5)',
-          border: '1px solid rgba(77, 54, 139, 0.2)',
+          background: 'rgba(245, 245, 247, 0.8)',
+          border: '1px solid rgba(77, 54, 139, 0.1)',
           borderRadius: '28px',
           margin: '0 2.5rem 3rem',
           overflow: 'hidden',
@@ -115,13 +120,13 @@ export default function Work() {
               </div>
               <h3 style={{
                 fontFamily: "'Readex Pro', sans-serif", fontSize: 'clamp(1.4rem, 3vw, 2rem)',
-                fontWeight: 700, color: 'white', marginBottom: '0.4rem',
+                fontWeight: 700, color: 'var(--text-primary)', marginBottom: '0.4rem',
               }}>
                 MAJOR — Full Brand Identity
               </h3>
               <p style={{
                 fontFamily: "'Inter', sans-serif", fontSize: '0.85rem',
-                color: 'rgba(255,255,255,0.4)', lineHeight: 1.6, maxWidth: '520px',
+                color: 'var(--text-secondary)', lineHeight: 1.6, maxWidth: '520px',
               }}>
                 A complete graphic charter for an innovative educational platform — from logo design and color systems to mascot creation, typography, and bilingual social media templates. 21 pages of structured brand identity.
               </p>
@@ -129,13 +134,13 @@ export default function Work() {
             <div style={{
               display: 'flex', alignItems: 'center', gap: '0.5rem',
               fontFamily: "'Inter', sans-serif", fontSize: '0.7rem',
-              color: 'rgba(255,255,255,0.25)', letterSpacing: '0.1em', textTransform: 'uppercase',
+              color: 'var(--text-tertiary)', letterSpacing: '0.1em', textTransform: 'uppercase',
             }}>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
                 <polyline points="14 2 14 8 20 8" />
               </svg>
-              21 Pages · Drag to browse
+              21 Pages · Auto-browsing
             </div>
           </div>
 
@@ -196,7 +201,7 @@ export default function Work() {
                   background: 'rgba(0,0,0,0.6)', backdropFilter: 'blur(8px)',
                   borderRadius: '6px', padding: '0.2rem 0.5rem',
                   fontFamily: "'Inter', sans-serif", fontSize: '0.6rem',
-                  color: 'rgba(255,255,255,0.6)',
+                  color: 'var(--bg-white)',
                 }}>
                   {i + 1} / 21
                 </div>
@@ -222,22 +227,23 @@ export default function Work() {
         {/* ══════════════════════════════════════════════
             SERVICE SHOWCASE GRID
            ══════════════════════════════════════════════ */}
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: '1fr 1.4fr',
-          gridTemplateRows: 'auto auto auto',
-          gap: '1.5rem',
-          padding: '0 2.5rem',
-        }} className="work-service-grid">
+      <div style={{
+        display: 'grid',
+        gridTemplateColumns: '1.2fr 1fr 1fr',
+        gridTemplateRows: 'auto auto',
+        gap: '1.5rem',
+        padding: '0 2.5rem',
+      }} className="work-service-grid">
 
-          {/* ── A: Social Media Content (tall, spans all 3 rows) ── */}
-          <div className="work-card service-card-social" style={{
-            gridRow: 'span 3',
+        {/* ── A: Social Media Content (spans 2 rows, fills available height) ── */}
+        <div className="work-card service-card-social" style={{
+          gridRow: 'span 2',
+          gridColumn: '1 / 2',
             borderRadius: '24px',
             overflow: 'hidden',
             position: 'relative',
-            background: 'rgba(34, 34, 42, 0.5)',
-            border: '1px solid rgba(77, 54, 139, 0.2)',
+            background: 'rgba(245, 245, 247, 0.8)',
+            border: '1px solid rgba(77, 54, 139, 0.1)',
           }}>
             {/* Scrollable feed */}
             <div style={{
@@ -261,45 +267,47 @@ export default function Work() {
                 />
               </div>
             </div>
-            {/* Overlay info */}
-            <div style={{
-              position: 'absolute', bottom: 0, left: 0, right: 0,
-              background: 'linear-gradient(transparent, rgba(17,17,22,0.95) 60%)',
-              padding: '4rem 1.5rem 1.5rem',
-              zIndex: 2,
-            }}>
+          {/* Overlay info */}
+          <div style={{
+            position: 'absolute', bottom: 0, left: 0, right: 0,
+            background: 'linear-gradient(transparent, rgba(255,255,255,0.98) 60%)',
+            padding: '3rem 1.5rem 1.5rem',
+            zIndex: 2,
+          }}>
               <div style={{ display: 'flex', gap: '0.4rem', marginBottom: '0.5rem' }}>
                 <span className="tag-pill" style={{ fontSize: '0.58rem' }}>Social Media</span>
                 <span className="tag-pill" style={{ fontSize: '0.58rem' }}>Content</span>
               </div>
               <h3 style={{
                 fontFamily: "'Readex Pro', sans-serif", fontSize: '1.2rem',
-                fontWeight: 700, color: 'white', marginBottom: '0.3rem',
+                fontWeight: 700, color: 'var(--text-primary)', marginBottom: '0.3rem',
               }}>
                 Social Media Management
               </h3>
               <p style={{
                 fontFamily: "'Inter', sans-serif", fontSize: '0.78rem',
-                color: 'rgba(255,255,255,0.45)', lineHeight: 1.5,
+                color: 'var(--text-secondary)', lineHeight: 1.5,
               }}>
                 30+ reels and video thumbnails with a cohesive visual identity across the entire Instagram feed.
               </p>
             </div>
           </div>
 
-          {/* ── B: Paid Advertising (2×2 mosaic) ── */}
-          <div className="work-card" style={{
+        {/* ── B: Paid Advertising (Smaller Card) ── */}
+        <div className="work-card" style={{
+          gridColumn: '2 / 3',
+          gridRow: '1 / 2',
             borderRadius: '24px',
             overflow: 'hidden',
             position: 'relative',
-            background: 'rgba(34, 34, 42, 0.5)',
-            border: '1px solid rgba(77, 54, 139, 0.2)',
+            background: 'rgba(245, 245, 247, 0.8)',
+            border: '1px solid rgba(77, 54, 139, 0.1)',
             padding: '1.25rem',
           }}>
-            <div style={{
-              display: 'grid', gridTemplateColumns: '1fr 1fr',
-              gap: '0.75rem', marginBottom: '1rem',
-            }}>
+          <div style={{
+            display: 'grid', gridTemplateColumns: '1fr 1fr',
+            gap: '0.5rem', marginBottom: '1rem',
+          }}>
               {[1, 2, 3, 4].map(n => (
                 <div key={n} style={{
                   borderRadius: '12px', overflow: 'hidden',
@@ -325,36 +333,37 @@ export default function Work() {
             </div>
             <h3 style={{
               fontFamily: "'Readex Pro', sans-serif", fontSize: '1.1rem',
-              fontWeight: 700, color: 'white', marginBottom: '0.25rem',
+              fontWeight: 700, color: 'var(--text-primary)', marginBottom: '0.25rem',
             }}>
               Paid Advertising
             </h3>
             <p style={{
               fontFamily: "'Inter', sans-serif", fontSize: '0.75rem',
-              color: 'rgba(255,255,255,0.4)', lineHeight: 1.5,
+              color: 'var(--text-secondary)', lineHeight: 1.5,
             }}>
               From concept and design to publishing — targeted ad campaigns across Facebook and Instagram that drive installs and engagement.
             </p>
           </div>
 
-          {/* ── C: Graphic Design ── */}
-          <div className="work-card" style={{
+        {/* ── C: Graphic Design (Smaller Card) ── */}
+        <div className="work-card" style={{
+          gridColumn: '3 / 4',
+          gridRow: '1 / 2',
             borderRadius: '24px',
             overflow: 'hidden',
             position: 'relative',
-            background: 'rgba(34, 34, 42, 0.5)',
-            border: '1px solid rgba(77, 54, 139, 0.2)',
+            background: 'rgba(245, 245, 247, 0.8)',
+            border: '1px solid rgba(77, 54, 139, 0.1)',
             padding: '1.25rem',
           }}>
-            <div style={{
-              display: 'grid', gridTemplateColumns: '1fr 1fr 1fr',
-              gap: '0.75rem', marginBottom: '1rem',
-            }}>
-              {[
-                { src: '/work/graphic-design/Printables Designs1.png', alt: 'Ignite Algiers badge design' },
-                { src: '/work/graphic-design/Printables Designs2.png', alt: 'Ignite Algiers roll-up banners' },
-                { src: '/work/graphic-design/store1.jpg', alt: 'Shoe store social media post' },
-              ].map((img, i) => (
+          <div style={{
+            display: 'grid', gridTemplateColumns: '1fr 1fr',
+            gap: '0.5rem', marginBottom: '1rem',
+          }}>
+            {[
+              { src: '/work/graphic-design/Printables Designs1.png', alt: 'Ignite Algiers badge design' },
+              { src: '/work/graphic-design/Printables Designs2.png', alt: 'Ignite Algiers roll-up banners' },
+            ].map((img, i) => (
                 <div key={i} style={{
                   borderRadius: '12px', overflow: 'hidden',
                   border: '1px solid rgba(77, 54, 139, 0.12)',
@@ -380,25 +389,27 @@ export default function Work() {
             </div>
             <h3 style={{
               fontFamily: "'Readex Pro', sans-serif", fontSize: '1.1rem',
-              fontWeight: 700, color: 'white', marginBottom: '0.25rem',
+              fontWeight: 700, color: 'var(--text-primary)', marginBottom: '0.25rem',
             }}>
               Graphic Design
             </h3>
             <p style={{
               fontFamily: "'Inter', sans-serif", fontSize: '0.75rem',
-              color: 'rgba(255,255,255,0.4)', lineHeight: 1.5,
+              color: 'var(--text-secondary)', lineHeight: 1.5,
             }}>
               Event printables for Ignite Algiers and product visuals for retail — from concept to print-ready files.
             </p>
           </div>
 
-          {/* ── D: Video Production ── */}
-          <div className="work-card" style={{
+        {/* ── D: Video Production (Wide Card) ── */}
+        <div className="work-card" style={{
+          gridColumn: '2 / 4',
+          gridRow: '2 / 3',
             borderRadius: '24px',
             overflow: 'hidden',
             position: 'relative',
-            background: 'rgba(34, 34, 42, 0.5)',
-            border: '1px solid rgba(77, 54, 139, 0.2)',
+            background: 'rgba(245, 245, 247, 0.8)',
+            border: '1px solid rgba(77, 54, 139, 0.1)',
             minHeight: '220px',
           }}>
             <img
@@ -427,13 +438,13 @@ export default function Work() {
               </div>
               <h3 style={{
                 fontFamily: "'Readex Pro', sans-serif", fontSize: '1.1rem',
-                fontWeight: 700, color: 'white', marginBottom: '0.25rem',
+                fontWeight: 700, color: 'var(--text-primary)', marginBottom: '0.25rem',
               }}>
                 Video Production & Podcasts
               </h3>
               <p style={{
                 fontFamily: "'Inter', sans-serif", fontSize: '0.75rem',
-                color: 'rgba(255,255,255,0.55)', lineHeight: 1.5,
+                color: 'var(--text-secondary)', lineHeight: 1.5,
               }}>
                 Professional multi-camera setups for video podcasts and talking-head content — from lighting to final edit.
               </p>
@@ -454,7 +465,7 @@ export default function Work() {
           }}>
             <p style={{
               fontFamily: "'Inter', sans-serif",
-              color: 'rgba(255,255,255,0.5)', fontSize: '0.9rem',
+              color: 'var(--text-secondary)', fontSize: '0.9rem',
             }}>
               Ready to be our next success story?
             </p>
@@ -503,10 +514,10 @@ export default function Work() {
               background: 'rgba(255,255,255,0.1)', border: 'none',
               borderRadius: '50%', width: '44px', height: '44px',
               cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center',
-              color: 'white', fontSize: '1.2rem', transition: 'background 0.2s',
+              color: 'var(--text-primary)', fontSize: '1.2rem', transition: 'background 0.2s',
             }}
-            onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = 'rgba(255,255,255,0.2)'; }}
-            onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = 'rgba(255,255,255,0.1)'; }}
+            onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = 'rgba(0,0,0,0.1)'; }}
+            onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = 'rgba(0,0,0,0.05)'; }}
           >
             ✕
           </button>
@@ -520,7 +531,7 @@ export default function Work() {
 
         /* social feed auto-scroll animation */
         .social-feed-scroll {
-          animation: socialScroll 25s linear infinite;
+          animation: socialScroll 15s linear infinite;
         }
         .service-card-social:hover .social-feed-scroll {
           animation-play-state: paused;
@@ -555,8 +566,11 @@ export default function Work() {
           .work-service-grid {
             grid-template-columns: 1fr !important;
           }
+          .work-card {
+            grid-column: 1 / -1 !important;
+            grid-row: auto !important;
+          }
           .service-card-social {
-            grid-row: span 1 !important;
             max-height: 500px;
           }
         }
