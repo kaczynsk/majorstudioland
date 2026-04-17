@@ -9,6 +9,7 @@ export default function Contact() {
   const [selected, setSelected] = useState<string[]>([]);
   const [selectedBudgets, setSelectedBudgets] = useState<string[]>([]);
   const [sent, setSent] = useState(false);
+  const [isSending, setIsSending] = useState(false);
 
   const toggleService = (s: string) => {
     setSelected(prev => prev.includes(s) ? prev.filter(x => x !== s) : [...prev, s]);
@@ -18,10 +19,7 @@ export default function Contact() {
     setSelectedBudgets(prev => prev.includes(b) ? prev.filter(x => x !== b) : [...prev, b]);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setSent(true);
-  };
+
 
   return (
     <section id="contact" style={{
@@ -178,20 +176,33 @@ export default function Contact() {
               </div>
             </div>
 
-            {/* Right: form */}
-            <form onSubmit={handleSubmit}>
+            {/* Right: form (Using FormSubmit.co for Zero-Config) */}
+            <form 
+              action="https://formsubmit.co/major.algerie@gmail.com" 
+              method="POST"
+              onSubmit={() => setIsSending(true)}
+            >
+              {/* FormSubmit Configuration */}
+              <input type="hidden" name="_subject" value="New Project Request - Major Studios" />
+              <input type="hidden" name="_template" value="table" />
+              <input type="hidden" name="_captcha" value="false" />
+              
+              {/* Hidden inputs for selected data */}
+              <input type="hidden" name="selected_services" value={selected.join(', ')} />
+              <input type="hidden" name="selected_budget" value={selectedBudgets.join(', ')} />
+              
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
                 <div>
                   <label style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.72rem', color: 'var(--text-tertiary)', letterSpacing: '0.1em', textTransform: 'uppercase', display: 'block', marginBottom: '0.5rem' }}>
                     {t('contact_form_name')}
                   </label>
-                  <input className="form-input" type="text" placeholder="Your Name" required />
+                  <input name="user_name" className="form-input" type="text" placeholder="Your Name" required />
                 </div>
                 <div>
                   <label style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.72rem', color: 'var(--text-tertiary)', letterSpacing: '0.1em', textTransform: 'uppercase', display: 'block', marginBottom: '0.5rem' }}>
                     {t('contact_form_company')}
                   </label>
-                  <input className="form-input" type="text" placeholder="Your Company Name" />
+                  <input name="user_company" className="form-input" type="text" placeholder="Your Company Name" />
                 </div>
               </div>
 
@@ -199,7 +210,7 @@ export default function Contact() {
                 <label style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.72rem', color: 'var(--text-tertiary)', letterSpacing: '0.1em', textTransform: 'uppercase', display: 'block', marginBottom: '0.5rem' }}>
                   {t('contact_form_phone')}
                 </label>
-                <input className="form-input" type="tel" placeholder="05XX XX XX XX" required />
+                <input name="user_phone" className="form-input" type="tel" placeholder="05XX XX XX XX" required />
               </div>
 
               {/* Services */}
@@ -265,6 +276,7 @@ export default function Contact() {
                   {t('contact_form_tell_us')}
                 </label>
                 <textarea
+                  name="message"
                   className="form-input"
                   placeholder="..."
                   rows={5}
@@ -273,8 +285,20 @@ export default function Contact() {
                 />
               </div>
 
-              <button type="submit" className="btn-yellow" style={{ width: '100%', fontSize: '1rem', padding: '1rem', borderRadius: '14px' }}>
-                {t('contact_form_submit')}
+              <button 
+                type="submit" 
+                className="btn-yellow" 
+                disabled={isSending}
+                style={{ 
+                  width: '100%', 
+                  fontSize: '1rem', 
+                  padding: '1rem', 
+                  borderRadius: '14px',
+                  opacity: isSending ? 0.7 : 1,
+                  cursor: isSending ? 'not-allowed' : 'pointer'
+                }}
+              >
+                {isSending ? '...' : t('contact_form_submit')}
               </button>
 
               <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.72rem', color: 'var(--text-tertiary)', textAlign: 'center', marginTop: '1rem' }}>

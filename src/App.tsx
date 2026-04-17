@@ -15,13 +15,13 @@ export default function App() {
       <Cursor />
       <Navbar />
       <main>
-        <Hero />
-        <Marquee />
-        <Work />
-        <Services />
-        <About />
-        <CTABanner />
-        <Contact />
+        <Hero key="hero-v2" />
+        <Marquee key="marquee-v2" />
+        <Work key="work-v2" />
+        <Services key="services-v2" />
+        <CTABanner key="cta-v2" />
+        <Contact key="contact-v2" />
+        <About key="about-v2" />
       </main>
       <Footer />
     </div>

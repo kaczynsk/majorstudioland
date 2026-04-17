@@ -183,7 +183,7 @@ export default function Footer() {
           gap: '1rem',
         }}>
           <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.75rem', color: 'var(--text-tertiary)' }}>
-            © {year} SARL DAAB (Major Studios). All rights reserved.
+            © {year} SARL DAAB (Major Studios). All rights reserved. | <span style={{ color: 'var(--accent-yellow)', fontWeight: 600 }}>v2.0 Revision B (Layout Updated)</span>
           </p>
           <div style={{ display: 'flex', gap: '1.5rem' }}>
             {['Privacy Policy', 'Terms of Service', 'Cookie Policy'].map((item) => (
