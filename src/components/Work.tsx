@@ -251,45 +251,44 @@ export default function Work() {
       <div style={{
         display: 'grid',
         gridTemplateColumns: '1.2fr 1fr 1fr',
-        gridTemplateRows: 'auto auto',
         gap: '1.5rem',
         padding: '0 2.5rem',
       }} className="work-service-grid">
 
-        {/* ── A: Social Media Content (spans 2 rows, fills available height) ── */}
+        {/* ── A: Social Media Content (spans 2 rows) ── */}
         <div className="work-card service-card-social" style={{
           gridRow: 'span 2',
           gridColumn: '1 / 2',
-            borderRadius: '24px',
+          borderRadius: '24px',
+          overflow: 'hidden',
+          position: 'relative',
+          background: 'rgba(245, 245, 247, 0.8)',
+          border: '1px solid rgba(77, 54, 139, 0.1)',
+          minHeight: '520px',
+        }}>
+          {/* Scrollable feed — gentle oscillate, fixed height, no empty space */}
+          <div style={{
+            position: 'absolute', inset: 0,
             overflow: 'hidden',
-            position: 'relative',
-            background: 'rgba(245, 245, 247, 0.8)',
-            border: '1px solid rgba(77, 54, 139, 0.1)',
           }}>
-            {/* Scrollable feed — gentle oscillate, fixed height, no empty space */}
-            <div style={{
-              width: '100%', height: '100%',
-              overflow: 'hidden', position: 'relative',
-              minHeight: '340px',
+            <div className="social-feed-scroll" style={{
+              display: 'flex', flexDirection: 'column', gap: '0',
+              willChange: 'transform',
             }}>
-              <div className="social-feed-scroll" style={{
-                display: 'flex', flexDirection: 'column', gap: '0',
-                willChange: 'transform',
-              }}>
-                <img
-                  src="/work/social-media/Split 1.png"
-                  alt="Social media content feed part 1"
-                  loading="lazy"
-                  style={{ width: '100%', display: 'block' }}
-                />
-                <img
-                  src="/work/social-media/Split 2.png"
-                  alt="Social media content feed part 2"
-                  loading="lazy"
-                  style={{ width: '100%', display: 'block' }}
-                />
-              </div>
+              <img
+                src="/work/social-media/Split 1.png"
+                alt="Social media content feed part 1"
+                loading="lazy"
+                style={{ width: '100%', display: 'block' }}
+              />
+              <img
+                src="/work/social-media/Split 2.png"
+                alt="Social media content feed part 2"
+                loading="lazy"
+                style={{ width: '100%', display: 'block' }}
+              />
             </div>
+          </div>
           {/* Overlay info */}
           <div style={{
             position: 'absolute', bottom: 0, left: 0, right: 0,
@@ -297,45 +296,45 @@ export default function Work() {
             padding: '3rem 1.5rem 1.5rem',
             zIndex: 2,
           }}>
-              <div style={{ display: 'flex', gap: '0.4rem', marginBottom: '0.5rem' }}>
-                <span className="tag-pill" style={{ fontSize: '0.58rem' }}>Social Media</span>
-                <span className="tag-pill" style={{ fontSize: '0.58rem' }}>Video</span>
-              </div>
-              <h3 style={{
-                fontFamily: "'Readex Pro', sans-serif", fontSize: '1.2rem',
-                fontWeight: 700, color: 'var(--text-primary)', marginBottom: '0.3rem',
-              }}>
-                Social Media &amp; Video Production
-              </h3>
-              <p style={{
-                fontFamily: "'Inter', sans-serif", fontSize: '0.78rem',
-                color: 'var(--text-secondary)', lineHeight: 1.5,
-              }}>
-                Content creation, reels, and video production — cohesive identity across the full feed.
-              </p>
+            <div style={{ display: 'flex', gap: '0.4rem', marginBottom: '0.5rem' }}>
+              <span className="tag-pill" style={{ fontSize: '0.58rem' }}>Social Media</span>
+              <span className="tag-pill" style={{ fontSize: '0.58rem' }}>Video</span>
             </div>
+            <h3 style={{
+              fontFamily: "'Readex Pro', sans-serif", fontSize: '1.2rem',
+              fontWeight: 700, color: 'var(--text-primary)', marginBottom: '0.3rem',
+            }}>
+              Social Media &amp; Video Production
+            </h3>
+            <p style={{
+              fontFamily: "'Inter', sans-serif", fontSize: '0.78rem',
+              color: 'var(--text-secondary)', lineHeight: 1.5,
+            }}>
+              Content creation, reels, and video production — cohesive identity across the full feed.
+            </p>
           </div>
+        </div>
 
         {/* ── B: Paid Advertising ── */}
         <div className="work-card" style={{
           gridColumn: '2 / 3',
           gridRow: '1 / 2',
           borderRadius: '24px',
-          position: 'relative',
           background: 'rgba(245, 245, 247, 0.8)',
           border: '1px solid rgba(77, 54, 139, 0.1)',
           padding: '1.25rem',
-          alignSelf: 'start',
         }}>
+          {/* 4 portrait ad images in a 2×2 grid, natural ratio */}
           <div style={{
             display: 'grid', gridTemplateColumns: '1fr 1fr',
             gap: '0.5rem', marginBottom: '1rem',
           }}>
             {[1, 2, 3, 4].map(n => (
               <div key={n} style={{
-                borderRadius: '12px', overflow: 'hidden',
+                borderRadius: '10px', overflow: 'hidden',
                 border: '1px solid rgba(77, 54, 139, 0.12)',
                 cursor: 'pointer', transition: 'transform 0.2s ease',
+                aspectRatio: '200 / 373',
               }}
                 onClick={() => openLightbox(`/work/ads/Ads-0${n}.png`, `Ad campaign ${n}`)}
                 onMouseEnter={e => { (e.currentTarget as HTMLElement).style.transform = 'scale(1.03)'; }}
@@ -345,7 +344,7 @@ export default function Work() {
                   src={`/work/ads/Ads-0${n}.png`}
                   alt={`Ad campaign ${n}`}
                   loading="lazy"
-                  style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', aspectRatio: '9/16' }}
+                  style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
                 />
               </div>
             ))}
@@ -364,20 +363,18 @@ export default function Work() {
             fontFamily: "'Inter', sans-serif", fontSize: '0.72rem',
             color: 'var(--text-secondary)', lineHeight: 1.4,
           }}>
-            Targeted ad campaigns across Facebook &amp; Instagram.
+            Targeted ad campaigns across Facebook &amp; Instagram — from creative to results.
           </p>
         </div>
 
-        {/* ── C: Graphic Design (col 3, row 1) ── */}
+        {/* ── C: Graphic Design ── */}
         <div className="work-card" style={{
           gridColumn: '3 / 4',
           gridRow: '1 / 2',
           borderRadius: '24px',
-          position: 'relative',
           background: 'rgba(245, 245, 247, 0.8)',
           border: '1px solid rgba(77, 54, 139, 0.1)',
           padding: '1.25rem',
-          alignSelf: 'start',
         }}>
           <div style={{
             display: 'grid', gridTemplateColumns: '1fr 1fr',
@@ -387,88 +384,89 @@ export default function Work() {
               { src: '/work/graphic-design/Printables Designs1.png', alt: 'Ignite Algiers badge design' },
               { src: '/work/graphic-design/Printables Designs2.png', alt: 'Ignite Algiers roll-up banners' },
             ].map((img, i) => (
-                <div key={i} style={{
-                  borderRadius: '12px', overflow: 'hidden',
-                  border: '1px solid rgba(77, 54, 139, 0.12)',
-                  cursor: 'pointer', transition: 'transform 0.2s ease',
-                  aspectRatio: '1',
-                }}
-                  onClick={() => openLightbox(img.src, img.alt)}
-                  onMouseEnter={e => { (e.currentTarget as HTMLElement).style.transform = 'scale(1.03)'; }}
-                  onMouseLeave={e => { (e.currentTarget as HTMLElement).style.transform = 'scale(1)'; }}
-                >
-                  <img
-                    src={img.src}
-                    alt={img.alt}
-                    loading="lazy"
-                    style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
-                  />
-                </div>
-              ))}
-            </div>
-            <div style={{ display: 'flex', gap: '0.4rem', marginBottom: '0.4rem', flexWrap: 'wrap' }}>
-              <span className="tag-pill" style={{ fontSize: '0.58rem' }}>Print</span>
-              <span className="tag-pill" style={{ fontSize: '0.58rem' }}>Event Design</span>
-            </div>
-            <h3 style={{
-              fontFamily: "'Readex Pro', sans-serif", fontSize: '1.05rem',
-              fontWeight: 700, color: 'var(--text-primary)', marginBottom: '0.2rem',
-            }}>
-              Graphic Design
-            </h3>
-            <p style={{
-              fontFamily: "'Inter', sans-serif", fontSize: '0.72rem',
-              color: 'var(--text-secondary)', lineHeight: 1.4,
-            }}>
-              From event printables to retail visuals — concept to print-ready.
-            </p>
-          </div>
-
-        {/* ── D: Video Production (spans cols 2-3, row 2, same format as B & C) ── */}
-        <div className="work-card" style={{
-          gridColumn: '2 / 4',
-          gridRow: '2 / 3',
-          borderRadius: '24px',
-          position: 'relative',
-          background: 'rgba(245, 245, 247, 0.8)',
-          border: '1px solid rgba(77, 54, 139, 0.1)',
-          padding: '1.25rem',
-          alignSelf: 'start',
-        }}>
-          {/* Wide image at top */}
-          <div style={{
-            borderRadius: '12px', overflow: 'hidden',
-            border: '1px solid rgba(77, 54, 139, 0.12)',
-            marginBottom: '1rem',
-            cursor: 'pointer',
-          }}
-            onClick={() => openLightbox('/work/video/podcast-setup.jpeg', 'Video production studio setup')}
-            onMouseEnter={e => { (e.currentTarget as HTMLElement).style.opacity = '0.92'; }}
-            onMouseLeave={e => { (e.currentTarget as HTMLElement).style.opacity = '1'; }}
-          >
-            <img
-              src="/work/video/podcast-setup.jpeg"
-              alt="Video production studio setup"
-              loading="lazy"
-              style={{ width: '100%', display: 'block', objectFit: 'cover', aspectRatio: '21/9' }}
-            />
+              <div key={i} style={{
+                borderRadius: '10px', overflow: 'hidden',
+                border: '1px solid rgba(77, 54, 139, 0.12)',
+                cursor: 'pointer', transition: 'transform 0.2s ease',
+                aspectRatio: '1',
+              }}
+                onClick={() => openLightbox(img.src, img.alt)}
+                onMouseEnter={e => { (e.currentTarget as HTMLElement).style.transform = 'scale(1.03)'; }}
+                onMouseLeave={e => { (e.currentTarget as HTMLElement).style.transform = 'scale(1)'; }}
+              >
+                <img
+                  src={img.src}
+                  alt={img.alt}
+                  loading="lazy"
+                  style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                />
+              </div>
+            ))}
           </div>
           <div style={{ display: 'flex', gap: '0.4rem', marginBottom: '0.4rem', flexWrap: 'wrap' }}>
-            <span className="tag-pill" style={{ fontSize: '0.58rem' }}>Video</span>
-            <span className="tag-pill" style={{ fontSize: '0.58rem' }}>Podcasts</span>
+            <span className="tag-pill" style={{ fontSize: '0.58rem' }}>Print</span>
+            <span className="tag-pill" style={{ fontSize: '0.58rem' }}>Event Design</span>
           </div>
           <h3 style={{
             fontFamily: "'Readex Pro', sans-serif", fontSize: '1.05rem',
             fontWeight: 700, color: 'var(--text-primary)', marginBottom: '0.2rem',
           }}>
-            Video Production &amp; Podcasts
+            Graphic Design
           </h3>
           <p style={{
             fontFamily: "'Inter', sans-serif", fontSize: '0.72rem',
             color: 'var(--text-secondary)', lineHeight: 1.4,
           }}>
-            Professional multi-camera setups for video podcasts and talking-head content — from lighting to final edit.
+            From event printables to retail visuals — concept to print-ready.
           </p>
+        </div>
+
+        {/* ── D: Video Production — full-bleed hero spanning cols 2-3, row 2 ── */}
+        <div className="work-card" style={{
+          gridColumn: '2 / 4',
+          gridRow: '2 / 3',
+          borderRadius: '24px',
+          overflow: 'hidden',
+          position: 'relative',
+          border: '1px solid rgba(77, 54, 139, 0.1)',
+          minHeight: '280px',
+        }}>
+          <img
+            src="/work/video/podcast-setup.jpeg"
+            alt="Video production studio setup"
+            loading="lazy"
+            style={{
+              width: '100%', height: '100%', objectFit: 'cover',
+              position: 'absolute', inset: 0, display: 'block',
+            }}
+          />
+          {/* Gradient overlay — bottom only so image stays visible */}
+          <div style={{
+            position: 'absolute', inset: 0,
+            background: 'linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.65) 100%)',
+          }} />
+          <div style={{
+            position: 'absolute', bottom: 0, left: 0, right: 0,
+            padding: '1.5rem',
+            zIndex: 2,
+          }}>
+            <div style={{ display: 'flex', gap: '0.4rem', marginBottom: '0.5rem' }}>
+              <span className="tag-pill" style={{ fontSize: '0.58rem' }}>Video</span>
+              <span className="tag-pill" style={{ fontSize: '0.58rem' }}>Podcasts</span>
+            </div>
+            <h3 style={{
+              fontFamily: "'Readex Pro', sans-serif", fontSize: '1.15rem',
+              fontWeight: 700, color: '#fff', marginBottom: '0.2rem',
+            }}>
+              Video Production &amp; Podcasts
+            </h3>
+            <p style={{
+              fontFamily: "'Inter', sans-serif", fontSize: '0.75rem',
+              color: 'rgba(255,255,255,0.82)', lineHeight: 1.5, maxWidth: '520px',
+            }}>
+              Professional multi-camera setups for video podcasts and talking-head content — from lighting to final edit.
+            </p>
+          </div>
         </div>
       </div>
 
