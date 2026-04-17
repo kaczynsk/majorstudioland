@@ -43,8 +43,24 @@ export default function Footer() {
             {/* Social icons */}
             <div style={{ display: 'flex', gap: '0.75rem' }}>
               {[
-                { label: 'IG', title: 'Instagram', href: 'https://www.instagram.com/studios.major/' },
-                { label: 'FB', title: 'Facebook', href: 'https://web.facebook.com/studios.major/' },
+                { 
+                  label: 'IG', title: 'Instagram', href: 'https://www.instagram.com/studios.major/',
+                  icon: (
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                      <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                    </svg>
+                  )
+                },
+                { 
+                  label: 'FB', title: 'Facebook', href: 'https://web.facebook.com/studios.major/',
+                  icon: (
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                    </svg>
+                  )
+                },
               ].map((s) => (
                 <a
                   key={s.label}
@@ -53,35 +69,32 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   title={s.title}
                   style={{
-                    width: '34px',
-                    height: '34px',
-                    borderRadius: '9px',
+                    width: '38px',
+                    height: '38px',
+                    borderRadius: '10px',
                     border: '1px solid rgba(77, 54, 139, 0.25)',
                     background: 'rgba(245, 245, 247, 0.8)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    fontFamily: "'Inter', sans-serif",
-                    fontSize: '0.6rem',
-                    fontWeight: 700,
                     color: 'var(--text-secondary)',
                     textDecoration: 'none',
                     transition: 'all 0.2s ease',
                   }}
                   onMouseEnter={e => {
-                    const el = e.target as HTMLElement;
+                    const el = e.currentTarget as HTMLElement;
                     el.style.color = 'var(--text-primary)';
                     el.style.borderColor = 'rgba(77, 54, 139, 0.4)';
                     el.style.background = 'rgba(77, 54, 139, 0.1)';
                   }}
                   onMouseLeave={e => {
-                    const el = e.target as HTMLElement;
+                    const el = e.currentTarget as HTMLElement;
                     el.style.color = 'var(--text-secondary)';
                     el.style.borderColor = 'rgba(77, 54, 139, 0.25)';
                     el.style.background = 'rgba(245, 245, 247, 0.8)';
                   }}
                 >
-                  {s.label}
+                  {s.icon}
                 </a>
               ))}
             </div>
@@ -92,7 +105,7 @@ export default function Footer() {
             <h4 style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.7rem', fontWeight: 600, color: 'var(--text-tertiary)', letterSpacing: '0.15em', textTransform: 'uppercase', marginBottom: '1.25rem' }}>
               Studio
             </h4>
-            {['About', 'Work', 'Services', 'Process', 'Careers'].map((item) => (
+            {['About', 'Work', 'Process', 'Contact'].map((item) => (
               <div key={item} style={{ marginBottom: '0.7rem' }}>
                 <a
                   href={`#${item.toLowerCase()}`}
@@ -109,7 +122,7 @@ export default function Footer() {
             <h4 style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.7rem', fontWeight: 600, color: 'var(--text-tertiary)', letterSpacing: '0.15em', textTransform: 'uppercase', marginBottom: '1.25rem' }}>
               Services
             </h4>
-            {['Brand Identity', 'Web Design', 'Product Design', 'Strategy', 'Motion', 'E-commerce'].map((item) => (
+            {['Social Media', 'Paid Advertising', 'Graphic Design', 'Video Production'].map((item) => (
               <div key={item} style={{ marginBottom: '0.7rem' }}>
                 <a href="#services" className="footer-link" onClick={(e) => { e.preventDefault(); handleNav('#services'); }}>
                   {item}
@@ -123,6 +136,13 @@ export default function Footer() {
               Contact
             </h4>
             <div style={{ marginBottom: '1rem' }}>
+              <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.72rem', color: 'var(--text-tertiary)', letterSpacing: '0.08em', marginBottom: '0.25rem' }}>Location</p>
+              <span className="footer-link" style={{ fontSize: '0.85rem', color: 'var(--text-secondary)' }}>
+                10 rue freres oudek,<br />
+                el harrach, Algiers, Algeria
+              </span>
+            </div>
+            <div style={{ marginBottom: '1rem' }}>
               <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.72rem', color: 'var(--text-tertiary)', letterSpacing: '0.08em', marginBottom: '0.25rem' }}>Email</p>
               <a href="mailto:major.algerie@gmail.com" className="footer-link" style={{ fontSize: '0.85rem' }}>
                 major.algerie@gmail.com
@@ -131,7 +151,7 @@ export default function Footer() {
             <div style={{ marginBottom: '2rem' }}>
               <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.72rem', color: 'var(--text-tertiary)', letterSpacing: '0.08em', marginBottom: '0.25rem' }}>Phone & Whatsapp</p>
               <span className="footer-link" style={{ fontSize: '0.85rem', color: 'var(--text-secondary)' }}>
-                0552586617
+                +213 552 58 66 17
               </span>
             </div>
             <a
@@ -157,7 +177,7 @@ export default function Footer() {
           gap: '1rem',
         }}>
           <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.75rem', color: 'var(--text-tertiary)' }}>
-            © {year} Major Studios. All rights reserved.
+            © {year} SARL DAAB (Major Studios). All rights reserved.
           </p>
           <div style={{ display: 'flex', gap: '1.5rem' }}>
             {['Privacy Policy', 'Terms of Service', 'Cookie Policy'].map((item) => (
