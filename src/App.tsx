@@ -5,7 +5,6 @@ import Marquee from './components/Marquee';
 import Work from './components/Work';
 import Services from './components/Services';
 import About from './components/About';
-import Testimonials from './components/Testimonials';
 import CTABanner from './components/CTABanner';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
@@ -21,7 +20,6 @@ export default function App() {
         <Work />
         <Services />
         <About />
-        <Testimonials />
         <CTABanner />
         <Contact />
       </main>
