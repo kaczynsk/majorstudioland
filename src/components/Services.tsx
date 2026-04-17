@@ -152,21 +152,7 @@ export default function Services() {
                 {service.description}
               </p>
 
-              <div style={{ borderTop: '1px solid rgba(77, 54, 139, 0.1)', paddingTop: '1rem' }}>
-                {service.list.map((item, j) => (
-                  <div key={j} style={{
-                    fontFamily: "'Inter', sans-serif",
-                    fontSize: '0.73rem',
-                    color: 'var(--text-secondary)',
-                    padding: '0.15rem 0',
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '0.4rem',
-                  }} className="yellow-dot">
-                    {item}
-                  </div>
-                ))}
-              </div>
+
             </div>
           ))}
         </div>
