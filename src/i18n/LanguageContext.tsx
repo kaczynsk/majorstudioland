@@ -24,9 +24,13 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }
     } else {
       // Feature: Adapt automatically to user's browser language if not set
       // e.g. "fr-DZ" -> "fr", "ar-SA" -> "ar"
-      const browserLang = typeof window !== 'undefined' ? window.navigator.language.substring(0, 2) : 'fr';
-      if (['en', 'fr', 'ar'].includes(browserLang)) {
-        setLanguage(browserLang as Language);
+      const browserLanguages = window.navigator.languages || [window.navigator.language];
+      const matchedLang = browserLanguages
+        .map(l => l.substring(0, 2).toLowerCase())
+        .find(l => ['en', 'fr', 'ar'].includes(l)) as Language | undefined;
+      
+      if (matchedLang) {
+        setLanguage(matchedLang);
       } else {
         setLanguage('fr');
       }
