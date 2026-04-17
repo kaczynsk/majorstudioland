@@ -17,7 +17,9 @@ export default function CTABanner() {
         top: '50%', left: '50%', transform: 'translate(-50%, -50%)',
       }} />
 
-      <div style={{
+      <div
+        className="cta-card-glow"
+        style={{
         maxWidth: '1000px',
         margin: '0 auto',
         position: 'relative',
