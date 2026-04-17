@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- Core Single Page Landing -->
+  <url>
+    <loc>https://majorstudios.dz/</loc>
+    <lastmod>2026-04-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    
+    <!-- Alternate languages (SEO Best Practice for i18n SPAs resolving via client routing or standard declaration) -->
+    <xhtml:link rel="alternate" hreflang="fr" href="https://majorstudios.dz/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://majorstudios.dz/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://majorstudios.dz/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://majorstudios.dz/"/>
+  </url>
+  
+</urlset>
