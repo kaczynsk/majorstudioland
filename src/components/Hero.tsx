@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import Logo from './Logo';
 
 const words = ['Brands.', 'Products.', 'Experiences.', 'Futures.'];
 
@@ -78,6 +79,46 @@ export default function Hero() {
         top: '30%', left: '-5%',
         animation: 'pulseGlow 5s ease-in-out infinite 1s',
       }} />
+
+      {/* Styled Background Logos */}
+      <div style={{
+        position: 'absolute',
+        top: '50%',
+        left: '50%',
+        transform: 'translate(-50%, -50%) rotate(-12deg)',
+        zIndex: 0,
+        pointerEvents: 'none',
+        opacity: 0.04,
+        filter: 'blur(1px)',
+      }}>
+        <Logo size={800} />
+      </div>
+
+      <div style={{
+        position: 'absolute',
+        top: '40%',
+        right: '-10%',
+        transform: 'rotate(15deg)',
+        zIndex: 0,
+        pointerEvents: 'none',
+        opacity: 0.15,
+        filter: 'blur(120px)',
+      }}>
+        <Logo size={600} />
+      </div>
+
+      <div style={{
+        position: 'absolute',
+        bottom: '-5%',
+        left: '-10%',
+        transform: 'rotate(-20deg)',
+        zIndex: 0,
+        pointerEvents: 'none',
+        opacity: 0.1,
+        filter: 'blur(80px)',
+      }}>
+        <Logo size={400} />
+      </div>
 
       {/* Badge */}
       <div style={{
